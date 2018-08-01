@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PhysicsEngine.iml" filepath="$PROJECT_DIR$/PhysicsEngine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PhysicsEngine_main.iml" filepath="$PROJECT_DIR$/.idea/modules/PhysicsEngine_main.iml" group="PhysicsEngine" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PhysicsEngine_test.iml" filepath="$PROJECT_DIR$/.idea/modules/PhysicsEngine_test.iml" group="PhysicsEngine" />
+    </modules>
+  </component>
+</project>
