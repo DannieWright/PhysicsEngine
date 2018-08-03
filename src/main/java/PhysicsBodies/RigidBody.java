@@ -277,8 +277,10 @@ abstract public class RigidBody extends KinematicBody
            invMassB = cBody.getInvMass (),
            invInertiaB = cBody.getInvInertia ();
 
+
     //it should be the case that caContactPointsA.length == caContactPointsB.length
-    for (int i = 0; i < caContactPointsA.length; ++i)
+    int numContactPoints = caContactPointsA.length;
+    for (int i = 0; i < numContactPoints; ++i)
     {
       //radius from body center to contact point
       Vector2D cRA = caContactPointsA[i].getSubtract (cPositionA),
@@ -321,7 +323,11 @@ abstract public class RigidBody extends KinematicBody
              impulseY = elasticityFactor * (-1 * diffVelX * sumRadiusInertia
                         + diffVelY * (sumInvMass - rAYSqr * invInertiaA
                         - rBYSqr * invInertiaB));
-      Vector2D cImpulse = new Vector2D (impulseX, impulseY);
+
+      //scale impulse based upon number of contact points since force is
+      //evenly distributed across area of contact
+      Vector2D cImpulse = new Vector2D (impulseX, impulseY).scale (
+          (1 / (double) numContactPoints));
 
 
       double negInvDelta = -1 / delta;

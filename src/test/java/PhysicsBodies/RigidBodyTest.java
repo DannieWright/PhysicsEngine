@@ -68,6 +68,14 @@ public class RigidBodyTest
   @Test
   public void calcPhysics ()
   {
+    /*
+    Elastic collision between a ball (m = 10kg and v_i = 10m/s) and a
+    static wall (infinite mass and no velocity)
+
+    Expected Results:
+    Ball is reflected, v_f = -v_i
+    Wall has no change
+     */
     Ball cBall = new Ball (0, 2, 2);
     Wall cWall = new Wall (new Vector2D (1.9,5), new Vector2D (4, 0));
     Vector2D cVelocity = new Vector2D (10, 0),
@@ -85,8 +93,34 @@ public class RigidBodyTest
     cBall.updatePhysics (DELTA);
 
     assertTrue ("cBall.mcVelocity gets mirrored", cExpectedVelocity.equals (cBall.mcVelocity));
+    assertTrue ("cWall has no velocity", cWall.mcVelocity.equals (new Vector2D ()));
 
 
-    
+    /*
+    Elastic collision between rectangular box (m = 10kg and v_i = 10 m/s) and
+    static wall (infinite mass and no velocity). Collision occurs on a face,
+    so there are two points of contact
+
+    Expected Results:
+    Box is reflected, v_f = -v_i
+    Wall has no change
+     */
+    Box cBox = new Box (new Vector2D (0, 4), new Vector2D (2, 0));
+    cBox.setMass (10);
+    cBox.mcVelocity = new Vector2D (10, 0);
+
+    cManifold = cBox.contactManifold (cWall);
+
+    assertNotNull ("cManifold != null", cManifold);
+
+    cBox.calcPhysics (cWall, cManifold, DELTA);
+
+    System.out.println (cBox.mcTranslationalForce);
+
+    cBox.updatePhysics (DELTA);
+
+    System.out.println (cBox.mcVelocity.toString ());
+    System.out.println (cBox.mAngularVelocity);
+
   }
 }
