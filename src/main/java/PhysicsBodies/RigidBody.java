@@ -27,6 +27,7 @@ abstract public class RigidBody extends KinematicBody
   boolean mbSleep,
           mbCanRotate,
           mbApplyGravity;
+  //TODO add mbJustSeperate, to just seperate rigidbody, not apply physics
 
   public RigidBody (Shape cShape)
   {
@@ -34,7 +35,8 @@ abstract public class RigidBody extends KinematicBody
 
     mcCollisionBodyManifoldMap = new HashMap<> (PhysicsBody.DEFAULT_SIZES);
     mcTranslationalForce = new Vector2D ();
-    mcTranslationalForceConst = PhysicsEngine.getInstance ().getGravity ();
+    //mcTranslationalForceConst = PhysicsEngine.getInstance ().getGravity ();
+    mcTranslationalForceConst = new Vector2D ();
     mTorque = mTorqueConst = 0;
 
     mTranslationalDampening = mRotationalDampening = 0.0d;
@@ -326,7 +328,7 @@ abstract public class RigidBody extends KinematicBody
 
       //add force and torque on this body to be applied at end of turn,
       //after friction is evaluated
-      this.applyForce ( cImpulse.getScaled (negInvDelta));
+      this.applyForce (cImpulse.getScaled (negInvDelta));
       this.applyTorque ((impulseX * rAY - impulseY * rAX) * negInvDelta);
       this.addCollidedBodyManifold (cBody, cManifold);
 

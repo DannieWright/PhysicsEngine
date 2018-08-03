@@ -14,7 +14,9 @@ import java.util.Iterator;
 
 abstract public class PhysicsBody extends AABBObject
 {
+  //bodies stick together, KE is not conserved
   public static final double INELASTIC = 0.0d;
+  //bodies reflect, KE is conserved
   public static final double ELASTIC = 1.0d;
   protected static final int DEFAULT_SIZES = 20;
 
@@ -46,6 +48,10 @@ abstract public class PhysicsBody extends AABBObject
 
   //TODO way to store constraint information
 
+  //TODO additional constructor with boolean to determine if user wants to force prevent adding body to physics engine
+
+  //TODO collision layer
+
   public PhysicsBody (Shape cShape)
   {
     super (cShape.getAABB ());
@@ -58,6 +64,9 @@ abstract public class PhysicsBody extends AABBObject
     mcPosition = cShape.getCenter ();
     mcVelocity = new Vector2D ();
     mAngularVelocity = 0;
+
+    //these values can ONLY be set to a value directly here, by default
+    //they represent an object with infinite mass and inertia
     mMass = 0;
     mInertia = 0;
     mInvMass = 0;
@@ -73,7 +82,7 @@ abstract public class PhysicsBody extends AABBObject
     this.setCanCollide (true);
 
     //can set this to false directly here to save processing instead of calling
-    //this.setCheckCollide (), but can only be done here and only false
+    //this.setCheckCollide (), but can ONLY be done here and ONLY false
     mbCheckCollide = false;
 
     //adds additional chance for body to call update() without requiring

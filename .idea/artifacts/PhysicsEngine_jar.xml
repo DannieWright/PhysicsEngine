@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PhysicsEngine:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/PhysicsEngine_jar</output-path>
+    <root id="archive" name="PhysicsEngine.jar" />
+  </artifact>
+</component>

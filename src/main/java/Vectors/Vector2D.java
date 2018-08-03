@@ -7,6 +7,8 @@ package Vectors;
  * @since   6/15/2018
  */
 
+//TODO add mbUnitUpToDate && Vector2D mcUnitVec, calc mcUnitVec if !mbUnitUpToDate else return mcUnitVec to save calculation cost for multiple access
+
 public class Vector2D implements IVector2D
 {
   public double mX,
