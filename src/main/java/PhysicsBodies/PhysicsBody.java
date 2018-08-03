@@ -522,7 +522,7 @@ abstract public class PhysicsBody extends AABBObject
 
   /*
 
-  The following are meant for debugging purposes
+  The following are meant for debugging/testing purposes
 
    */
 
@@ -530,7 +530,23 @@ abstract public class PhysicsBody extends AABBObject
   {
     return new AABB (mcAABB);
   }
-
+  
+  public double kineticEnergy ()
+  {
+    return this.translationalKineticEnergy () + this.rotationalKineticEnergy ();
+  }
+  
+  public double translationalKineticEnergy ()
+  {
+    double speed = this.mcVelocity.getMagnitude ();
+    return 0.5 * this.getMass () * speed * speed;
+  }
+  
+  public double rotationalKineticEnergy ()
+  {
+    double omega = this.mAngularVelocity;
+    return 0.5 * this.getInertia () * omega * omega;
+  }
 
   //TODO add temp check for collision that adds the body to the AABBTree,
   //checks for collisions, then immediately removes it

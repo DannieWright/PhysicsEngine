@@ -108,19 +108,18 @@ public class RigidBodyTest
     Box cBox = new Box (new Vector2D (0, 4), new Vector2D (2, 0));
     cBox.setMass (10);
     cBox.mcVelocity = new Vector2D (10, 0);
-
+    cExpectedVelocity = cBox.mcVelocity.getMirrorX ();
+    
     cManifold = cBox.contactManifold (cWall);
 
     assertNotNull ("cManifold != null", cManifold);
 
     cBox.calcPhysics (cWall, cManifold, DELTA);
-
-    System.out.println (cBox.mcTranslationalForce);
-
     cBox.updatePhysics (DELTA);
+    
+    assertTrue ("cBox.mcVelocity gets mirrored", cExpectedVelocity.equals (cBox.mcVelocity));
+    assertEquals ("cBox.mAngularVelocity == 0", 0 == cBox.mAngularVelocity);
 
-    System.out.println (cBox.mcVelocity.toString ());
-    System.out.println (cBox.mAngularVelocity);
-
+    
   }
 }
