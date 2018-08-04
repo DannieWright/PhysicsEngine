@@ -101,8 +101,7 @@ abstract public class RigidBody extends KinematicBody
     //this.calcFriction (delta);
 
     //apply translational force
-    mcTranslationalForce.scale (delta * this.getInvMass ());
-    mcVelocity.add (mcTranslationalForce);
+    mcVelocity.add (mcTranslationalForce.scale (delta * this.getInvMass ()));
 
     //apply translational dampening
     Vector2D cVelocityMirror = mcVelocity.getMirror ();

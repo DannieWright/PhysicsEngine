@@ -7,6 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709ea5c4-c95b-47ff-9ced-5d0fbf9aa485" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/PhysicsBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/PhysicsBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/RigidBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/RigidBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/PhysicsBodies/RigidBodyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/PhysicsBodies/RigidBodyTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java" afterDir="false" />
     </list>
@@ -28,11 +32,12 @@
     <session id="-1209988398">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.39" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,24 +52,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2726" />
+          <entry key="java" value="3821" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2726" />
+          <entry key="JAVA" value="3821" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.55919397">
+    <splitter split-orientation="horizontal" split-proportion="0.48677582">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsEngine/PhysicsEngine.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1921">
+                <state relative-caret-position="68">
                   <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
                 </state>
               </provider>
@@ -73,8 +78,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="438">
-                  <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
+                <state relative-caret-position="423">
+                  <caret line="179" column="65" selection-start-line="179" selection-start-column="65" selection-end-line="179" selection-end-column="65" />
                 </state>
               </provider>
             </entry>
@@ -86,22 +91,14 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="291">
-                  <caret line="406" column="80" selection-start-line="406" selection-start-column="80" selection-end-line="406" selection-end-column="80" />
+                <state relative-caret-position="413">
+                  <caret line="336" column="19" selection-start-line="336" selection-start-column="19" selection-end-line="336" selection-end-column="19" />
                   <folding>
                     <element signature="method#setRotationalDampening#0;class#RigidBody#0" />
                     <element signature="method#setTranslationalDampening#0;class#RigidBody#0" />
                     <element signature="method#applyForce#0;class#RigidBody#0" />
                     <element signature="method#applyImpulse#0;class#RigidBody#0" />
-                    <element signature="e#2366#2422#0" />
                     <element signature="method#calcFriction#0;class#RigidBody#0" />
-                    <element signature="e#5180#5248#0" />
-                    <element signature="e#5853#5912#0" />
-                    <element signature="e#6707#6779#0" />
-                    <element signature="e#7250#7320#0" />
-                    <element signature="e#7654#7710#0" />
-                    <element signature="e#8306#8393#0" />
-                    <element signature="e#11658#11723#0" />
                     <element signature="method#addCollidedBodyManifold#0;class#RigidBody#0" />
                     <element signature="method#removeCollidedBody#0;class#RigidBody#0" />
                     <element signature="method#hasCollidedBodyManifold#0;class#RigidBody#0" />
@@ -116,40 +113,10 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-962">
-                  <caret line="68" column="61" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
+                <state relative-caret-position="7548">
+                  <caret line="524" column="47" selection-start-line="524" selection-start-column="47" selection-end-line="524" selection-end-column="47" />
                   <folding>
                     <element signature="e#1357#1399#0" />
-                    <element signature="e#2165#2240#0" />
-                    <element signature="e#2346#2414#0" />
-                    <element signature="e#3386#3768#0" />
-                    <element signature="e#3772#3906#0" />
-                    <element signature="e#3910#4042#0" />
-                    <element signature="e#4111#4384#0" />
-                    <element signature="e#5090#5184#0" />
-                    <element signature="e#5633#5725#0" />
-                    <element signature="e#5851#5946#0" />
-                    <element signature="e#5951#6130#0" />
-                    <element signature="e#6840#7071#0" />
-                    <element signature="e#7075#7174#0" />
-                    <element signature="e#7178#7360#0" />
-                    <element signature="e#7446#7634#0" />
-                    <element signature="e#7638#7778#0" />
-                    <element signature="e#7782#7920#0" />
-                    <element signature="e#7924#8286#0" />
-                    <element signature="e#8290#8444#0" />
-                    <element signature="e#8448#9277#0" />
-                    <element signature="e#9281#10098#0" />
-                    <element signature="e#10102#10265#0" />
-                    <element signature="e#10269#10574#0" />
-                    <element signature="e#10578#10977#0" />
-                    <element signature="e#10981#11185#0" />
-                    <element signature="e#11189#11366#0" />
-                    <element signature="e#11370#11473#0" />
-                    <element signature="e#11559#11870#0" />
-                    <element signature="e#11874#12035#0" />
-                    <element signature="e#12039#12279#0" />
-                    <element signature="e#12483#12554#0" />
                   </folding>
                 </state>
               </provider>
@@ -490,8 +457,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java" />
         <option value="$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java" />
-        <option value="$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java" />
+        <option value="$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java" />
       </list>
     </option>
   </component>
@@ -507,7 +474,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -590,12 +556,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533328110104" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533341936001" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -679,34 +646,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 12h 01m 47s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 14h 32m 35s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 12h 03m 28s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 14h 32m 59s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 12h 05m 57s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 14h 33m 07s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 12h 57m 30s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 14h 35m 04s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 12h 58m 53s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 16h 21m 41s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 12h 59m 30s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 16h 22m 14s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 13h 00m 20s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 16h 22m 20s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 13h 01m 50s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 16h 22m 33s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 13h 02m 39s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 16h 24m 43s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 13h 03m 00s.xml">
+    <history-entry file="RigidBodyTest_calcPhysics - 2018.08.03 at 16h 26m 20s.xml">
       <configuration name="RigidBodyTest.calcPhysics" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -714,7 +681,7 @@
     <frame x="-8" y="-8" width="1878" height="1012" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12651265" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12761275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -723,7 +690,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31171787" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26279864" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -732,7 +699,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32992035" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32992035" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -755,6 +722,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsEngine/PhysicsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="336" column="19" selection-start-line="336" selection-start-column="19" selection-end-line="336" selection-end-column="19" />
+          <folding>
+            <element signature="method#setRotationalDampening#0;class#RigidBody#0" />
+            <element signature="method#setTranslationalDampening#0;class#RigidBody#0" />
+            <element signature="method#applyForce#0;class#RigidBody#0" />
+            <element signature="method#applyImpulse#0;class#RigidBody#0" />
+            <element signature="method#calcFriction#0;class#RigidBody#0" />
+            <element signature="method#addCollidedBodyManifold#0;class#RigidBody#0" />
+            <element signature="method#removeCollidedBody#0;class#RigidBody#0" />
+            <element signature="method#hasCollidedBodyManifold#0;class#RigidBody#0" />
+            <element signature="method#clearCollidingSet#0;class#RigidBody#0" />
+            <element signature="method#clearForces#0;class#RigidBody#0" />
+            <element signature="method#updateTurn#0;class#RigidBody#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7548">
+          <caret line="524" column="47" selection-start-line="524" selection-start-column="47" selection-end-line="524" selection-end-column="47" />
+          <folding>
+            <element signature="e#1357#1399#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/StaticBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -766,92 +777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsEngine/PhysicsEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1921">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/StaticBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-962">
-          <caret line="68" column="61" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
-          <folding>
-            <element signature="e#1357#1399#0" />
-            <element signature="e#2165#2240#0" />
-            <element signature="e#2346#2414#0" />
-            <element signature="e#3386#3768#0" />
-            <element signature="e#3772#3906#0" />
-            <element signature="e#3910#4042#0" />
-            <element signature="e#4111#4384#0" />
-            <element signature="e#5090#5184#0" />
-            <element signature="e#5633#5725#0" />
-            <element signature="e#5851#5946#0" />
-            <element signature="e#5951#6130#0" />
-            <element signature="e#6840#7071#0" />
-            <element signature="e#7075#7174#0" />
-            <element signature="e#7178#7360#0" />
-            <element signature="e#7446#7634#0" />
-            <element signature="e#7638#7778#0" />
-            <element signature="e#7782#7920#0" />
-            <element signature="e#7924#8286#0" />
-            <element signature="e#8290#8444#0" />
-            <element signature="e#8448#9277#0" />
-            <element signature="e#9281#10098#0" />
-            <element signature="e#10102#10265#0" />
-            <element signature="e#10269#10574#0" />
-            <element signature="e#10578#10977#0" />
-            <element signature="e#10981#11185#0" />
-            <element signature="e#11189#11366#0" />
-            <element signature="e#11370#11473#0" />
-            <element signature="e#11559#11870#0" />
-            <element signature="e#11874#12035#0" />
-            <element signature="e#12039#12279#0" />
-            <element signature="e#12483#12554#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="406" column="80" selection-start-line="406" selection-start-column="80" selection-end-line="406" selection-end-column="80" />
-          <folding>
-            <element signature="method#setRotationalDampening#0;class#RigidBody#0" />
-            <element signature="method#setTranslationalDampening#0;class#RigidBody#0" />
-            <element signature="method#applyForce#0;class#RigidBody#0" />
-            <element signature="method#applyImpulse#0;class#RigidBody#0" />
-            <element signature="e#2366#2422#0" />
-            <element signature="method#calcFriction#0;class#RigidBody#0" />
-            <element signature="e#5180#5248#0" />
-            <element signature="e#5853#5912#0" />
-            <element signature="e#6707#6779#0" />
-            <element signature="e#7250#7320#0" />
-            <element signature="e#7654#7710#0" />
-            <element signature="e#8306#8393#0" />
-            <element signature="e#11658#11723#0" />
-            <element signature="method#addCollidedBodyManifold#0;class#RigidBody#0" />
-            <element signature="method#removeCollidedBody#0;class#RigidBody#0" />
-            <element signature="method#hasCollidedBodyManifold#0;class#RigidBody#0" />
-            <element signature="method#clearCollidingSet#0;class#RigidBody#0" />
-            <element signature="method#clearForces#0;class#RigidBody#0" />
-            <element signature="method#updateTurn#0;class#RigidBody#0" />
-          </folding>
+        <state relative-caret-position="423">
+          <caret line="179" column="65" selection-start-line="179" selection-start-column="65" selection-end-line="179" selection-end-column="65" />
         </state>
       </provider>
     </entry>
