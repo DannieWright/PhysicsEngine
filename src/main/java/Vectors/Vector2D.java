@@ -253,8 +253,8 @@ public class Vector2D implements IVector2D
 
   public boolean equals (Vector2D cVec)
   {
-    return Math.abs (this.mX) - Math.abs (cVec.mX) < IVector2D.APPROX_ZERO
-        && Math.abs (this.mY) - Math.abs (cVec.mY) < IVector2D.APPROX_ZERO ;
+    return Math.abs (this.mX - cVec.mX) < IVector2D.APPROX_ZERO
+        && Math.abs (this.mY - cVec.mY) < IVector2D.APPROX_ZERO ;
   }
 
 

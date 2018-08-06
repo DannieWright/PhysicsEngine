@@ -7,12 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709ea5c4-c95b-47ff-9ced-5d0fbf9aa485" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/PhysicsBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/PhysicsBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/RigidBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/RigidBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/PhysicsBodies/RigidBodyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/PhysicsBodies/RigidBodyTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -52,34 +47,66 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3821" />
+          <entry key="java" value="3829" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3821" />
+          <entry key="JAVA" value="3829" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48677582">
+    <splitter split-orientation="horizontal" split-proportion="0.43631777">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsEngine/PhysicsEngine.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
+                <state relative-caret-position="17">
                   <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java">
+            <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="423">
-                  <caret line="179" column="65" selection-start-line="179" selection-start-column="65" selection-end-line="179" selection-end-column="65" />
+                <state relative-caret-position="343">
+                  <caret line="256" column="31" selection-start-line="256" selection-start-column="31" selection-end-line="256" selection-end-column="31" />
+                  <folding>
+                    <element signature="docComment;class#Vector2D#0" />
+                    <element signature="method#Vector2D#1;class#Vector2D#0" />
+                    <element signature="method#Vector2D#2;class#Vector2D#0" />
+                    <element signature="method#angle#0;class#Vector2D#0" />
+                    <element signature="method#dot#0;class#Vector2D#0" />
+                    <element signature="method#unit#0;class#Vector2D#0" />
+                    <element signature="method#getUnit#0;class#Vector2D#0" />
+                    <element signature="method#projection#0;class#Vector2D#0" />
+                    <element signature="method#distance#0;class#Vector2D#0" />
+                    <element signature="method#distanceSquared#0;class#Vector2D#0" />
+                    <element signature="method#getNormal#0;class#Vector2D#0" />
+                    <element signature="method#getNormalCW#0;class#Vector2D#0" />
+                    <element signature="method#getNormalCCW#0;class#Vector2D#0" />
+                    <element signature="method#getTangent#0;class#Vector2D#0" />
+                    <element signature="method#perpendicular#0;class#Vector2D#0" />
+                    <element signature="method#parallel#0;class#Vector2D#0" />
+                    <element signature="method#add#0;class#Vector2D#0" />
+                    <element signature="method#getAdd#0;class#Vector2D#0" />
+                    <element signature="method#subtract#0;class#Vector2D#0" />
+                    <element signature="method#getSubtract#0;class#Vector2D#0" />
+                    <element signature="method#set#0;class#Vector2D#0" />
+                    <element signature="method#set#1;class#Vector2D#0" />
+                    <element signature="method#offSet#0;class#Vector2D#0" />
+                    <element signature="method#rotate#0;class#Vector2D#0" />
+                    <element signature="method#getRotated#0;class#Vector2D#0" />
+                    <element signature="method#mirrorX#0;class#Vector2D#0" />
+                    <element signature="method#mirrorY#0;class#Vector2D#0" />
+                    <element signature="method#mirror#0;class#Vector2D#0" />
+                    <element signature="method#getScaled#0;class#Vector2D#0" />
+                    <element signature="method#scale#0;class#Vector2D#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -91,14 +118,14 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="413">
-                  <caret line="336" column="19" selection-start-line="336" selection-start-column="19" selection-end-line="336" selection-end-column="19" />
+                <state relative-caret-position="-1734">
+                  <caret line="82" column="6" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
                   <folding>
                     <element signature="method#setRotationalDampening#0;class#RigidBody#0" />
                     <element signature="method#setTranslationalDampening#0;class#RigidBody#0" />
                     <element signature="method#applyForce#0;class#RigidBody#0" />
-                    <element signature="method#applyImpulse#0;class#RigidBody#0" />
-                    <element signature="method#calcFriction#0;class#RigidBody#0" />
+                    <element signature="e#2222#2223#0" expanded="true" />
+                    <element signature="e#2249#2250#0" expanded="true" />
                     <element signature="method#addCollidedBodyManifold#0;class#RigidBody#0" />
                     <element signature="method#removeCollidedBody#0;class#RigidBody#0" />
                     <element signature="method#hasCollidedBodyManifold#0;class#RigidBody#0" />
@@ -113,32 +140,10 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="7548">
-                  <caret line="524" column="47" selection-start-line="524" selection-start-column="47" selection-end-line="524" selection-end-column="47" />
+                <state relative-caret-position="1037">
+                  <caret line="262" column="5" selection-start-line="262" selection-start-column="5" selection-end-line="262" selection-end-column="5" />
                   <folding>
-                    <element signature="e#1357#1399#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/StaticBody.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="149" selection-start-line="9" selection-start-column="149" selection-end-line="9" selection-end-column="149" />
-                  <folding>
-                    <element signature="e#4094#4095#0" expanded="true" />
-                    <element signature="e#4133#4134#0" expanded="true" />
+                    <element signature="e#6471#6472#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -455,10 +460,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java" />
         <option value="$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java" />
         <option value="$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java" />
         <option value="$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java" />
       </list>
     </option>
   </component>
@@ -499,6 +504,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConvexPolygon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
@@ -556,13 +569,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533341936001" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533577122183" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -681,7 +694,7 @@
     <frame x="-8" y="-8" width="1878" height="1012" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12761275" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12871288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -690,7 +703,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26279864" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3265074" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -724,21 +737,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsEngine/PhysicsEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="17">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="336" column="19" selection-start-line="336" selection-start-column="19" selection-end-line="336" selection-end-column="19" />
+        <state relative-caret-position="-1734">
+          <caret line="82" column="6" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
           <folding>
             <element signature="method#setRotationalDampening#0;class#RigidBody#0" />
             <element signature="method#setTranslationalDampening#0;class#RigidBody#0" />
             <element signature="method#applyForce#0;class#RigidBody#0" />
-            <element signature="method#applyImpulse#0;class#RigidBody#0" />
-            <element signature="method#calcFriction#0;class#RigidBody#0" />
+            <element signature="e#2222#2223#0" expanded="true" />
+            <element signature="e#2249#2250#0" expanded="true" />
             <element signature="method#addCollidedBodyManifold#0;class#RigidBody#0" />
             <element signature="method#removeCollidedBody#0;class#RigidBody#0" />
             <element signature="method#hasCollidedBodyManifold#0;class#RigidBody#0" />
@@ -751,10 +764,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7548">
-          <caret line="524" column="47" selection-start-line="524" selection-start-column="47" selection-end-line="524" selection-end-column="47" />
+        <state relative-caret-position="1037">
+          <caret line="262" column="5" selection-start-line="262" selection-start-column="5" selection-end-line="262" selection-end-column="5" />
           <folding>
-            <element signature="e#1357#1399#0" />
+            <element signature="e#6471#6472#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -768,11 +781,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="149" selection-start-line="9" selection-start-column="149" selection-end-line="9" selection-end-column="149" />
+        <state relative-caret-position="343">
+          <caret line="256" column="31" selection-start-line="256" selection-start-column="31" selection-end-line="256" selection-end-column="31" />
           <folding>
-            <element signature="e#4094#4095#0" expanded="true" />
-            <element signature="e#4133#4134#0" expanded="true" />
+            <element signature="docComment;class#Vector2D#0" />
+            <element signature="method#Vector2D#1;class#Vector2D#0" />
+            <element signature="method#Vector2D#2;class#Vector2D#0" />
+            <element signature="method#angle#0;class#Vector2D#0" />
+            <element signature="method#dot#0;class#Vector2D#0" />
+            <element signature="method#unit#0;class#Vector2D#0" />
+            <element signature="method#getUnit#0;class#Vector2D#0" />
+            <element signature="method#projection#0;class#Vector2D#0" />
+            <element signature="method#distance#0;class#Vector2D#0" />
+            <element signature="method#distanceSquared#0;class#Vector2D#0" />
+            <element signature="method#getNormal#0;class#Vector2D#0" />
+            <element signature="method#getNormalCW#0;class#Vector2D#0" />
+            <element signature="method#getNormalCCW#0;class#Vector2D#0" />
+            <element signature="method#getTangent#0;class#Vector2D#0" />
+            <element signature="method#perpendicular#0;class#Vector2D#0" />
+            <element signature="method#parallel#0;class#Vector2D#0" />
+            <element signature="method#add#0;class#Vector2D#0" />
+            <element signature="method#getAdd#0;class#Vector2D#0" />
+            <element signature="method#subtract#0;class#Vector2D#0" />
+            <element signature="method#getSubtract#0;class#Vector2D#0" />
+            <element signature="method#set#0;class#Vector2D#0" />
+            <element signature="method#set#1;class#Vector2D#0" />
+            <element signature="method#offSet#0;class#Vector2D#0" />
+            <element signature="method#rotate#0;class#Vector2D#0" />
+            <element signature="method#getRotated#0;class#Vector2D#0" />
+            <element signature="method#mirrorX#0;class#Vector2D#0" />
+            <element signature="method#mirrorY#0;class#Vector2D#0" />
+            <element signature="method#mirror#0;class#Vector2D#0" />
+            <element signature="method#getScaled#0;class#Vector2D#0" />
+            <element signature="method#scale#0;class#Vector2D#0" />
           </folding>
         </state>
       </provider>
