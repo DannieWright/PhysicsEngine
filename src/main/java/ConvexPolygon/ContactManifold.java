@@ -15,6 +15,7 @@ public class ContactManifold
                   mcNormalA,
                   mcaContactManifoldB[],
                   mcNormalB;
+  public MinTransVec mcMinTransVec;
 
   /**
    * Initializes class to given values
@@ -25,12 +26,14 @@ public class ContactManifold
    * @param cNormalB           - normal to the surface at the contact points
    */
   public ContactManifold (Vector2D caContactManifoldA[], Vector2D cNormalA,
-                          Vector2D caContactManifoldB[], Vector2D cNormalB)
+                          Vector2D caContactManifoldB[], Vector2D cNormalB,
+                          MinTransVec cMinTransVec)
   {
     mcaContactManifoldA = caContactManifoldA;
     mcNormalA = cNormalA;
     mcaContactManifoldB = caContactManifoldB;
     mcNormalB = cNormalB;
+    mcMinTransVec = cMinTransVec;
   }
 
   public void swap ()
@@ -47,7 +50,8 @@ public class ContactManifold
   public ContactManifold getSwap ()
   {
     return new ContactManifold (mcaContactManifoldB, mcNormalB,
-                                mcaContactManifoldA, mcNormalA);
+                                mcaContactManifoldA, mcNormalA,
+                                mcMinTransVec);
   }
 
 }

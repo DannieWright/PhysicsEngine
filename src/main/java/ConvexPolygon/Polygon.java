@@ -205,14 +205,16 @@ public class Polygon extends Shape
    *
    * @param cShapeA   - colliding shape that is the origin of the minimum
    *                    translational vector
-   * @param cMinTrans - minimum amount shapes would have to stop colliding as
+   * @param cMinTransVec - minimum amount shapes would have to stop colliding as
    *                    normal to one shape's edge
    *
    * @return contact manifold for both shapes
    */
     public ContactManifold contactManifold (Shape cShapeA,
-                                                Vector2D cMinTrans)
+                                                MinTransVec cMinTransVec)
     {
+      Vector2D cMinTrans = cMinTransVec.mcMinTransVec;
+      
       if (cShapeA instanceof Polygon)
       {
         Polygon cPolygonA = (Polygon) cShapeA;
@@ -265,7 +267,8 @@ public class Polygon extends Shape
         cNormalB.unit ();
         cNormalB.scale (transMag);
 
-        return new ContactManifold (caContactA, cNormalA, caContactB, cNormalB);
+        return new ContactManifold (caContactA, cNormalA, caContactB, cNormalB,
+                                    cMinTransVec);
       }
       else if (cShapeA instanceof Circle)
       {
@@ -279,7 +282,8 @@ public class Polygon extends Shape
                  cNormalCircle = new Vector2D (cMinTrans);
 
         return new ContactManifold (caContactCircle, cNormalCircle,
-                                    caContactPolygon, cNormalPolygon);
+                                    caContactPolygon, cNormalPolygon,
+                                    cMinTransVec);
       }
 
       return null;
