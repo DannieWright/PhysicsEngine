@@ -91,6 +91,7 @@ public class RigidBodyTest
     assertNotNull ("cManifold != null", cManifold);
 
     cBall.calcPhysics (cWall, cManifold, DELTA);
+    System.out.println (cBall.mcVelocity.toString ());
     cBall.updatePhysics (DELTA);
 
     assertTrue ("cBall.mcVelocity gets mirrored", cExpectedVelocity.equals (cBall.mcVelocity));
@@ -110,7 +111,7 @@ public class RigidBodyTest
     cBox.setMass (10);
     cBox.mcVelocity = new Vector2D (10, 0);
     cExpectedVelocity = cBox.mcVelocity.getMirrorX ();
-    
+
     cManifold = cBox.contactManifold (cWall);
 
     assertNotNull ("cManifold != null", cManifold);
@@ -118,6 +119,8 @@ public class RigidBodyTest
     cBox.calcPhysics (cWall, cManifold, DELTA);
     cBox.updatePhysics (DELTA);
     
+    System.out.println (cBox.mcVelocity.toString ());
+
     assertTrue ("cBox.mcVelocity gets mirrored", cExpectedVelocity.equals (cBox.mcVelocity));
     assertTrue  ("cBox.mAngularVelocity == 0", 0 == cBox.mAngularVelocity);
 
@@ -137,10 +140,10 @@ public class RigidBodyTest
     cBox.setMass (10);
     cBox.setInertia (10);
     cBox.mcVelocity = new Vector2D (10, 0);
-   // cBox.rotate (0.001);
+    cBox.rotate (0.001);
     double KEinit = cBox.kineticEnergy ();
     
-//    System.out.println ("KE_init: " + KEinit);
+    System.out.println ("KE_init: " + KEinit);
     
     cManifold = cBox.contactManifold (cWall);
   
@@ -155,9 +158,9 @@ public class RigidBodyTest
     
     double KEfinal = cBox.kineticEnergy ();
     
-//    System.out.println ("KE_final: " + KEfinal);
-//    System.out.println ("v_final: " + cBox.mcVelocity.toString ());
-//    System.out.println ("omega_final: " + cBox.mAngularVelocity);
+    System.out.println ("KE_final: " + KEfinal);
+    System.out.println ("v_final: " + cBox.mcVelocity.toString ());
+    System.out.println ("omega_final: " + cBox.mAngularVelocity);
     
     
     
@@ -169,21 +172,21 @@ public class RigidBodyTest
   
     Vector2D n = new Vector2D (0, 1);
     
-    double F_o = 10,
-           F_eff = F_o * (n.projection (r1) + n.projection (r2)) /  n.projection (r_eff);
-    
-    
-    double F_trans = -F_o * (n.projection (r1) + n.projection (r2)),
-           torque = -F_o * (n.projection (r1.getNormalCW ()) * r1.getMagnitude ()
-                          + n.projection (r2.getNormalCW ()) * r2.getMagnitude ());
-    double F_trans_eff = -F_eff * (n.projection (r_eff)),
-           torque_eff = -F_eff * (n.projection (r_eff.getNormalCW ())) * r_eff.getMagnitude ();
-    
-    System.out.println ("F_trans: " + F_trans);
-    System.out.println ("torque:  " + torque);
-    System.out.println ("F_trans_eff: " + F_trans_eff);
-    System.out.println ("torque_eff:  " + torque_eff);
-    
+//    double F_o = 10,
+//           F_eff = F_o * (n.projection (r1) + n.projection (r2)) /  n.projection (r_eff);
+//
+//
+//    double F_trans = -F_o * (n.projection (r1) + n.projection (r2)),
+//           torque = -F_o * (n.projection (r1.getNormalCW ()) * r1.getMagnitude ()
+//                          + n.projection (r2.getNormalCW ()) * r2.getMagnitude ());
+//    double F_trans_eff = -F_eff * (n.projection (r_eff)),
+//           torque_eff = -F_eff * (n.projection (r_eff.getNormalCW ())) * r_eff.getMagnitude ();
+//
+//    System.out.println ("F_trans: " + F_trans);
+//    System.out.println ("torque:  " + torque);
+//    System.out.println ("F_trans_eff: " + F_trans_eff);
+//    System.out.println ("torque_eff:  " + torque_eff);
+//
     
     
   }

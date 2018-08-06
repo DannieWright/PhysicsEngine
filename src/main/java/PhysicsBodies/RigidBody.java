@@ -18,6 +18,8 @@ abstract public class RigidBody extends KinematicBody
 
   Vector2D mcTranslationalForce,
            mcTranslationalForceConst;
+  
+  
   double mTorque,
          mTorqueConst;
 
@@ -260,91 +262,93 @@ abstract public class RigidBody extends KinematicBody
     Vector2D cPositionA = this.getPosition (),
              cPositionB = cBody.getPosition (),
              caContactPointsA[] = cManifold.mcaContactManifoldA,
-             cNormalA = cManifold.mcNormalA,
-             caContactPointsB[] = cManifold.mcaContactManifoldB,
-             cNormalB = cManifold.mcNormalB;
+             caContactPointsB[] = cManifold.mcaContactManifoldB;
 
     Vector2D cVelocityA = this.mcVelocity,
              cVelocityB = cBody.mcVelocity;
+    
     double angularVelocityA = this.mAngularVelocity,
            angularVelocityB = cBody.mAngularVelocity;
 
+    
+    //it should be the case that caContactPointsA.length == caContactPointsB.length
+    int numContactPoints = caContactPointsA.length;
+    
+    //radius from body center to contact point
+    Vector2D cRA,
+             cRB;
+    
+    //TODO revise approximation
+    //if there are two points of contact then the collision was between to
+    //parallel edges, to simplify find effective contact point between the two
+    if (2 == numContactPoints)
+    {
+      cRA = (caContactPointsA[0].getSubtract (cPositionA).add (
+              caContactPointsA[0].getSubtract (cPositionA))).scale (0.5);
+      cRB = (caContactPointsB[0].getSubtract (cPositionB).add (
+              caContactPointsB[0].getSubtract (cPositionB))).scale (0.5);
+    }
+    else
+    {
+      cRA = caContactPointsA[0].getSubtract (cPositionA);
+      cRB = caContactPointsB[0].getSubtract (cPositionB);
+    }
+    
+
+    //calc velocity of contact points
+    double vAX = cVelocityA.mX - cRA.mY * angularVelocityA,
+           vAY = cVelocityA.mY + cRA.mX * angularVelocityA,
+           vBX = cVelocityB.mX - cRB.mY * angularVelocityB,
+           vBY = cVelocityB.mY + cRB.mX * angularVelocityB;
+
+    //calc values used to solve for impulse
+    Vector2D cRelativeVel = new Vector2D (vBX - vAX, vBY - vAY),
+             cMinTransVec = cManifold.mcMinTransVec.mcMinTransVec.getUnit ();
+    
+    if (this.isShape (cManifold.mcMinTransVec.mcRecipient))
+    {
+      cMinTransVec.mirror ();
+    }
+  
     double elasticity = Math.min (this.getElasticity (),
                                   cBody.getElasticity ()),
            invMassA = this.getInvMass (),
            invInertiaA = this.getInvInertia (),
            invMassB = cBody.getInvMass (),
            invInertiaB = cBody.getInvInertia ();
-
-
-    //it should be the case that caContactPointsA.length == caContactPointsB.length
-    int numContactPoints = caContactPointsA.length;
-    for (int i = 0; i < numContactPoints; ++i)
+    
+    double elasticityFactor = -(elasticity + 1),
+           sumInvMass = invMassA + invMassB,
+           rACrossN = cRA.cross (cMinTransVec),
+           rBCrossN = cRB.cross (cMinTransVec),
+           sumInvInertia = rACrossN * rACrossN * invInertiaA + rBCrossN * rBCrossN * invInertiaB;
+    
+    double denominator = sumInvInertia + sumInvMass;
+    
+    //if inv inertia && mass are all zero an impulse value cannot
+    //be calculated
+    if (0 == denominator)
     {
-      //radius from body center to contact point
-      Vector2D cRA = caContactPointsA[i].getSubtract (cPositionA),
-               cRB = caContactPointsB[i].getSubtract (cPositionB);
+      return;
+    }
+    
+    //calc impulse
+    double impulse = cRelativeVel.dot (cMinTransVec) * elasticityFactor / denominator;
+    //want to apply impulse in the direction of the minimum translational vector
+    //this.applyImpulse (cMinTransVec.scale (impulse), cRA);
+    //to calc friction want to sum all forces, so instead of applying impulse
+    //directly we will apply force and torque
+    Vector2D cForce = cMinTransVec.scale (-impulse / delta);
+    this.applyForce (cForce);
+    this.applyTorque (cForce.cross (cRA));
 
-      double rAX = cRA.mX,
-             rAXSqr = rAX * rAX,
-             rAY = cRA.mY,
-             rAYSqr = rAY * rAY,
-             rBX = cRB.mX,
-             rBXSqr = rBX * rBX,
-             rBY = cRB.mY,
-             rBYSqr = rBY * rBY;
-
-      //calc velocity of contact points
-      double vAX = cVelocityA.mX - rAY * angularVelocityA,
-             vAY = cVelocityA.mY + rAX * angularVelocityA,
-             vBX = cVelocityB.mX - rBY * angularVelocityB,
-             vBY = cVelocityB.mY + rBX * angularVelocityB;
-
-      //calc values used to solve for impulse
-      double sumInvMass = invMassA + invMassB,
-             kFactor = sumInvMass * sumInvMass
-                        - invMassA * invInertiaA * (rAXSqr + rAYSqr)
-                        - invMassA * invInertiaB * (rBXSqr + rBYSqr)
-                        - invMassB * invInertiaA * (rAYSqr + rAXSqr)
-                        - invMassB * invInertiaB * (rBXSqr + rBYSqr)
-                        + invInertiaA * invInertiaB * (rAYSqr * rBXSqr
-                        + rAXSqr * rBYSqr - 2 * rAX * rAY * rBX * rBY),
-             elasticityFactor = (elasticity + 1) / kFactor,
-             diffVelX = vAX - vBX,
-             diffVelY = vAY - vBY,
-             sumRadiusInertia = rAX * rAY * invInertiaA + rBX * rBY
-                                * invInertiaB;
-
-      //calc impulse
-      double impulseX = elasticityFactor * (diffVelX * (sumInvMass - rAXSqr
-                        * invInertiaA - rBXSqr * invInertiaB)
-                        - diffVelY * sumRadiusInertia),
-             impulseY = elasticityFactor * (-1 * diffVelX * sumRadiusInertia
-                        + diffVelY * (sumInvMass - rAYSqr * invInertiaA
-                        - rBYSqr * invInertiaB));
-
-      //scale impulse based upon number of contact points since force is
-      //evenly distributed across area of contact
-      Vector2D cImpulse = new Vector2D (impulseX, impulseY).scale (
-          (1 / (double) numContactPoints));
-
-
-      double negInvDelta = -1 / delta;
-
-      //add force and torque on this body to be applied at end of turn,
-      //after friction is evaluated
-      this.applyForce (cImpulse.getScaled (negInvDelta));
-      this.applyTorque ((impulseX * rAY - impulseY * rAX) * negInvDelta);
-      this.addCollidedBodyManifold (cBody, cManifold);
-
-      //apply force and torque on colliding body iff it is a rigid body
-      if (cBody instanceof RigidBody)
-      {
-        ((RigidBody) cBody).applyForce (cImpulse);
-        ((RigidBody) cBody).applyTorque ((impulseX * rBY - impulseY * rBX)
-                                          * negInvDelta);
-        ((RigidBody) cBody).addCollidedBodyManifold (cBody, cManifold.getSwap ());
-      }
+    //if other body is also rigid body, then apply impulse to it as well
+    if (cBody instanceof RigidBody)
+    {
+      RigidBody cRigid = (RigidBody) cBody;
+      //-1 because the impulse needs to go in the opposite direction
+      cRigid.applyForce (cForce.scale (-1));
+      cRigid.applyTorque (cForce.cross (cRB));
     }
   }
 
