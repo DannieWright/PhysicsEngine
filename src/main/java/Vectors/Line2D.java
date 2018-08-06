@@ -62,7 +62,13 @@ public class Line2D implements IVector2D
   {
     return mcDifference.dot (cVec);
   }
-
+  
+  @Override
+  public double cross (Vector2D cVec)
+  {
+    return mcDifference.cross (cVec);
+  }
+  
   /**
    * Returns the dot product between this line and the given line
    *

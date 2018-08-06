@@ -19,6 +19,7 @@ public interface IVector2D
 
   double angle (Vector2D cVec);
   double dot (Vector2D cVec);
+  double cross (Vector2D cVec);
 
   Vector2D unit ();
   Vector2D getUnit ();
