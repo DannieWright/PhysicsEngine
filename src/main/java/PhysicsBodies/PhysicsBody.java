@@ -28,8 +28,8 @@ abstract public class PhysicsBody extends AABBObject
   protected HashSet<PhysicsBody> mcCollidedSet; //if mbNoCheckCollide == false, don't add
 
   private Vector2D mcPosition;
-  protected Vector2D mcVelocity;
-  protected double mAngularVelocity;
+  Vector2D mcVelocity;
+  double mAngularVelocity;
   private double mMass,
                  mInvMass,
                  mInertia,
@@ -190,6 +190,11 @@ abstract public class PhysicsBody extends AABBObject
     return mbForceUpdate;
   }
 
+  public double getAngularVelocity ()
+  {
+    return mAngularVelocity;
+  }
+  
   public double getDynamicFrictionCoefficient ()
   {
     return mDynamicFrictionCoefficient;
@@ -240,6 +245,21 @@ abstract public class PhysicsBody extends AABBObject
     return mTurn;
   }
 
+  public Vector2D getVelocity ()
+  {
+    return new Vector2D (mcVelocity);
+  }
+  
+  public double getVelocityX ()
+  {
+    return mcVelocity.mX;
+  }
+  
+  public double getVelocityY ()
+  {
+    return mcVelocity.mY;
+  }
+  
   public boolean hasUpdated ()
   {
     return mTurn == mLastTurn;
@@ -261,6 +281,11 @@ abstract public class PhysicsBody extends AABBObject
     {
       return mcCollidedSet.contains (cBody);
     }
+  }
+  
+  public boolean isShape (Shape cShape)
+  {
+    return cShape == mcShape;
   }
 
   /*
@@ -363,6 +388,11 @@ abstract public class PhysicsBody extends AABBObject
     PhysicsEngine.getInstance ().updateAABB (this);
   }
 
+  public void setAngularVelocity (double vel)
+  {
+    mAngularVelocity = vel;
+  }
+  
   /*
   when setting mbCanCollide to true, Body is not added to AABBTree until
   end of current turn, and so collisions will not be detected until next turn
@@ -499,6 +529,18 @@ abstract public class PhysicsBody extends AABBObject
     {
       mStaticFrictionCoefficient = frictionCoeff;
     }
+  }
+  
+  public void setVelocity (Vector2D cVel)
+  {
+    mcVelocity.mX = cVel.mX;
+    mcVelocity.mY = cVel.mY;
+  }
+  
+  public void setVelocity (double x, double y)
+  {
+    mcVelocity.mX = x;
+    mcVelocity.mY = y;
   }
 
   //if turn is out of date then update and clear store colliding sets

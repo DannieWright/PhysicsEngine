@@ -24,7 +24,7 @@ abstract public class Shape
   abstract Vector2D[] getNormals ();
   abstract public boolean equals (Shape cShape);
   abstract protected ContactManifold contactManifold (Shape cShapeA,
-                                                      Vector2D cMinTrans);
+                                                      MinTransVec cMinTransVec);
 
   public ContactManifold contactManifold (MinTransVec cMinTransVec)
   {
@@ -32,7 +32,7 @@ abstract public class Shape
           cRecipient = cMinTransVec.mcRecipient;
 
     ContactManifold cManifold = cRecipient.contactManifold (cOrigin,
-                                           cMinTransVec.mcMinTransVec);
+                                           cMinTransVec);
 
     //make this shape be shape A in the contact manifold
     if (this != cOrigin)

@@ -153,16 +153,17 @@ public class Circle extends Shape
    *
    * @param cShapeA   - colliding shape that is the origin of the minimum
    *                    translational vector
-   * @param cMinTrans - minimum amount shapes would have to stop colliding as
+   * @param cMinTransVec - minimum amount shapes would have to stop colliding as
    *                    normal to one shape's edge
    *
    * @return contact manifold for both shapes, else null on failure
    */
-  public ContactManifold contactManifold (Shape cShapeA, Vector2D cMinTrans)
+  public ContactManifold contactManifold (Shape cShapeA, MinTransVec cMinTransVec)
   {
     //the minimum translational vector points from shape A to shape B,
     //where this is shape B
-    Vector2D cMinTransAxis = cMinTrans.getUnit (),
+    Vector2D cMinTrans = cMinTransVec.mcMinTransVec,
+             cMinTransAxis = cMinTrans.getUnit (),
              cContactB = cMinTransAxis.getScaled (-1 * this.mRadius).add (
                           this.mcCenter),
              caContactB[] = {cContactB},
@@ -170,7 +171,8 @@ public class Circle extends Shape
              cNormalA = new Vector2D (cMinTrans),
              cNormalB = cMinTrans.getMirror ();
 
-    return new ContactManifold (caContactA, cNormalA, caContactB, cNormalB);
+    return new ContactManifold (caContactA, cNormalA, caContactB, cNormalB,
+                                cMinTransVec);
   }
 
   /**
