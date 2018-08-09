@@ -91,7 +91,6 @@ public class RigidBodyTest
     assertNotNull ("cManifold != null", cManifold);
 
     cBall.calcPhysics (cWall, cManifold, DELTA);
-    System.out.println (cBall.mcVelocity.toString ());
     cBall.updatePhysics (DELTA);
 
     assertTrue ("cBall.mcVelocity gets mirrored", cExpectedVelocity.equals (cBall.mcVelocity));
@@ -118,8 +117,6 @@ public class RigidBodyTest
 
     cBox.calcPhysics (cWall, cManifold, DELTA);
     cBox.updatePhysics (DELTA);
-    
-    System.out.println (cBox.mcVelocity.toString ());
 
     assertTrue ("cBox.mcVelocity gets mirrored", cExpectedVelocity.equals (cBox.mcVelocity));
     assertTrue  ("cBox.mAngularVelocity == 0", 0 == cBox.mAngularVelocity);
@@ -127,13 +124,15 @@ public class RigidBodyTest
     
     /*
     Elastic collision between rectangular box (m = 10kg and v_i = 10 m/s) and
-    static wall (infinite mass and no velocity). Collision occurs on a face,
-    so there are two points of contact. The points of contact are skewed from
+    static wall (infinite mass and no velocity). Collision occurs at a vertex,
+    so there is one point of contact. The point of contact is skewed from
     the center of mass which will cause rotational motion to occur, but total
     kinetic energy should remain preserved
     
     Expected Results:
-    
+    KE_i = KE_f
+    angular velocity < 0
+    velocity decreases in magnitude but remains in (1,0) direction
      */
     
     cBox = new Box (new Vector2D (0, 4), new Vector2D (2, 0));
@@ -143,51 +142,28 @@ public class RigidBodyTest
     cBox.rotate (0.001);
     double KEinit = cBox.kineticEnergy ();
     
-    System.out.println ("KE_init: " + KEinit);
-    
     cManifold = cBox.contactManifold (cWall);
   
     assertNotNull ("cManifold != null", cManifold);
   
     cBox.calcPhysics (cWall, cManifold, DELTA);
-//
-//    System.out.println ("F_trans: " + cBox.mcTranslationalForce);
-//    System.out.println ("torque: " + cBox.mTorque);
-    
     cBox.updatePhysics (DELTA);
     
     double KEfinal = cBox.kineticEnergy ();
     
-    System.out.println ("KE_final: " + KEfinal);
-    System.out.println ("v_final: " + cBox.mcVelocity.toString ());
-    System.out.println ("omega_final: " + cBox.mAngularVelocity);
     
     
+    /*
+    Elastic collision between rectangular box (m = 10kg and v_i = 10 m/s) and
+    ball (m = 10kg and v_i = 10 m/s). Collision occurs at a vertex,
+    so there is one point of contact. The point of contact is skewed from
+    the center of mass which will cause rotational motion to occur, but total
+    kinetic energy should remain preserved
     
-
-    
-    Vector2D r1 = new Vector2D (-2, 1),
-             r2 = new Vector2D (1, 1),
-             r_eff = r1.getAdd (r2).scale (0.5);
-  
-    Vector2D n = new Vector2D (0, 1);
-    
-//    double F_o = 10,
-//           F_eff = F_o * (n.projection (r1) + n.projection (r2)) /  n.projection (r_eff);
-//
-//
-//    double F_trans = -F_o * (n.projection (r1) + n.projection (r2)),
-//           torque = -F_o * (n.projection (r1.getNormalCW ()) * r1.getMagnitude ()
-//                          + n.projection (r2.getNormalCW ()) * r2.getMagnitude ());
-//    double F_trans_eff = -F_eff * (n.projection (r_eff)),
-//           torque_eff = -F_eff * (n.projection (r_eff.getNormalCW ())) * r_eff.getMagnitude ();
-//
-//    System.out.println ("F_trans: " + F_trans);
-//    System.out.println ("torque:  " + torque);
-//    System.out.println ("F_trans_eff: " + F_trans_eff);
-//    System.out.println ("torque_eff:  " + torque_eff);
-//
-    
-    
+    Expected Results:
+    KE_i = KE_f
+    angular velocity < 0
+    velocity decreases in magnitude but remains in (1,0) direction
+     */
   }
 }

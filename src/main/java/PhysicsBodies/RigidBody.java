@@ -16,19 +16,19 @@ abstract public class RigidBody extends KinematicBody
   //TODO set up adjusting sizes
   private Map<PhysicsBody, ContactManifold> mcCollisionBodyManifoldMap;
 
-  Vector2D mcTranslationalForce,
-           mcTranslationalForceConst;
+  private Vector2D mcTranslationalForce,
+                   mcTranslationalForceConst;
   
   
-  double mTorque,
-         mTorqueConst;
+  private double mTorque,
+                 mTorqueConst;
 
   private double  mTranslationalDampening,
                   mRotationalDampening;
 
-  boolean mbSleep,
-          mbCanRotate,
-          mbApplyGravity;
+  private boolean mbSleep,
+                  mbCanRotate,
+                  mbApplyGravity;
   //TODO add mbJustSeperate, to just seperate rigidbody, not apply physics
 
   public RigidBody (Shape cShape)
@@ -97,6 +97,10 @@ abstract public class RigidBody extends KinematicBody
   {
     //add constant forces
     mcTranslationalForce.add (mcTranslationalForceConst);
+    if (mbApplyGravity)
+    {
+      mcTranslationalForce.add (PhysicsEngine.getInstance ().getGravity ());
+    }
     mTorque += mTorqueConst;
 
     //modify translational force && torque based on friction
@@ -256,7 +260,6 @@ abstract public class RigidBody extends KinematicBody
   {
     //TODO may need to add constant amount to impulse to take into account seperation depth
     //TODO make sure that contactpoints for edges, the points at a given index correspond to the closest point on the other contact point array
-
     //TODO IMPORTANT: ensure contact manifold doesn't gain energy (vs single contact point), may have to look in calcFriction as well
 
     Vector2D cPositionA = this.getPosition (),
@@ -301,6 +304,13 @@ abstract public class RigidBody extends KinematicBody
            vBX = cVelocityB.mX - cRB.mY * angularVelocityB,
            vBY = cVelocityB.mY + cRB.mX * angularVelocityB;
 
+    //if the contact points are going away from each other then do not calculate
+    //impulse needed to remove them
+    if (new Vector2D (vAX, vAY).dot (new Vector2D (vBX, vBY)) > 0)
+    {
+      return;
+    }
+    
     //calc values used to solve for impulse
     Vector2D cRelativeVel = new Vector2D (vBX - vAX, vBY - vAY),
              cMinTransVec = cManifold.mcMinTransVec.mcMinTransVec.getUnit ();
