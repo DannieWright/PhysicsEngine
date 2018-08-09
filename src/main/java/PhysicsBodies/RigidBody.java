@@ -1,6 +1,7 @@
 package PhysicsBodies;
 
 import ConvexPolygon.ContactManifold;
+import ConvexPolygon.MinTransVec;
 import ConvexPolygon.Shape;
 import PhysicsEngine.PhysicsEngine;
 import Vectors.Vector2D;
@@ -121,9 +122,38 @@ abstract public class RigidBody extends KinematicBody
     mAngularVelocity -= mRotationalDampening * mAngularVelocity;
 
     //rotate and move based on velocities
-    this.offSet (mcVelocity.getScaled (delta), mAngularVelocity * delta);
+    Vector2D cOffSet = mcVelocity.getScaled (delta);
+    this.offSet (cOffSet, mAngularVelocity * delta);
 
+    //apply additional position correction to fix
+    this.additionalCorrection ();
+    
     this.clearForces ();
+  }
+  
+  private void additionalCorrection ()
+  {
+    final double allowance = 0.01d; //penetration allowance
+    final double percent = -0.001d; //amount correct by -0.01 is decent
+    
+    for (Iterator<PhysicsBody> cBodies = this.mcCollisionBodyManifoldMap.keySet ().iterator ();
+    cBodies.hasNext ();)
+    {
+      PhysicsBody cBody = cBodies.next ();
+      ContactManifold cManifold = mcCollisionBodyManifoldMap.get (cBody);
+      MinTransVec cMinTransVec = cManifold.mcMinTransVec;
+  
+      double penetrationDepth = cMinTransVec.mcMinTransVec.getMagnitude ();
+      double correctionDepth = Math.max (penetrationDepth - allowance, 0.0d) / (this.getInvMass () + cBody.getInvMass ()) * percent;
+      
+      this.offSet (cManifold.mcNormalA.getScaled (correctionDepth));
+      
+      //only move other body if other body is a RigidBody
+      if (cBody instanceof RigidBody)
+      {
+        cBody.offSet (cManifold.mcNormalB.getScaled (correctionDepth));
+      }
+    }
   }
 
   //TODO maybe add bCheckFriction, so as to maybe save some processing if disable friction
@@ -304,12 +334,12 @@ abstract public class RigidBody extends KinematicBody
            vBX = cVelocityB.mX - cRB.mY * angularVelocityB,
            vBY = cVelocityB.mY + cRB.mX * angularVelocityB;
 
-    //if the contact points are going away from each other then do not calculate
-    //impulse needed to remove them
-    if (new Vector2D (vAX, vAY).dot (new Vector2D (vBX, vBY)) > 0)
-    {
-      return;
-    }
+//    //if the contact points are going away from each other then do not calculate
+//    //impulse needed to remove them
+//    if (new Vector2D (vAX, vAY).dot (new Vector2D (vBX, vBY)) > 0)
+//    {
+//      return;
+//    }
     
     //calc values used to solve for impulse
     Vector2D cRelativeVel = new Vector2D (vBX - vAX, vBY - vAY),
@@ -351,6 +381,11 @@ abstract public class RigidBody extends KinematicBody
     Vector2D cForce = cMinTransVec.scale (-impulse / delta);
     this.applyForce (cForce);
     this.applyTorque (cForce.cross (cRA));
+    
+    //add bodies to map with manifold for calculations at the end of the turn,
+    //this will only add if the bodies have masses/inertias for further
+    //calculations
+    this.addCollidedBodyManifold (cBody, cManifold);
 
     //if other body is also rigid body, then apply impulse to it as well
     if (cBody instanceof RigidBody)
@@ -359,6 +394,7 @@ abstract public class RigidBody extends KinematicBody
       //-1 because the impulse needs to go in the opposite direction
       cRigid.applyForce (cForce.scale (-1));
       cRigid.applyTorque (cForce.cross (cRB));
+      cRigid.addCollidedBodyManifold (this, cManifold.getSwap ());
     }
   }
 

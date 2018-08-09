@@ -27,7 +27,8 @@ abstract public class PhysicsBody extends AABBObject
   private HashSet<Class> mcNoCollideClassSet;
   protected HashSet<PhysicsBody> mcCollidedSet; //if mbNoCheckCollide == false, don't add
 
-  private Vector2D mcPosition;
+  private Vector2D mcPosition,
+                   mcPositionPrev;
   Vector2D mcVelocity;
   double mAngularVelocity;
   private double mMass,
@@ -62,6 +63,7 @@ abstract public class PhysicsBody extends AABBObject
     mcCollidedSet = new HashSet<> (PhysicsBody.DEFAULT_SIZES);
 
     mcPosition = cShape.getCenter ();
+    mcPositionPrev = this.getPosition ();
     mcVelocity = new Vector2D ();
     mAngularVelocity = 0;
 
@@ -235,6 +237,11 @@ abstract public class PhysicsBody extends AABBObject
     return new Vector2D (mcPosition);
   }
 
+  public Vector2D getPositionPrev ()
+  {
+    return new Vector2D (mcPositionPrev);
+  }
+  
   public double getStaticFrictionCoefficient ()
   {
     return mStaticFrictionCoefficient;
@@ -318,6 +325,7 @@ abstract public class PhysicsBody extends AABBObject
 
   public void offSet (double x, double y, double angle)
   {
+    mcPositionPrev = this.getPosition ();
     mcShape.offSet (x, y);
     mcShape.rotate (angle);
     mcPosition.offSet (x, y);
@@ -332,6 +340,7 @@ abstract public class PhysicsBody extends AABBObject
 
   public void offSet (double x, double y)
   {
+    mcPositionPrev = this.getPosition ();
     mcShape.offSet (x, y);
     mcPosition.offSet (x, y);
     mcAABB.offSet (x, y);
