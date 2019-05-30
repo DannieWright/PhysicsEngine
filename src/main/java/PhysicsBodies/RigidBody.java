@@ -1,6 +1,6 @@
 package PhysicsBodies;
 
-import ConvexPolygon.ContactManifold;
+import ConvexPolygon.ContactManifoldBasic;
 import ConvexPolygon.MinTransVec;
 import ConvexPolygon.Shape;
 import PhysicsEngine.PhysicsEngine;
@@ -15,7 +15,7 @@ abstract public class RigidBody extends KinematicBody
   private static final double APPROX_ZERO = 1.0E-14d;
 
   //TODO set up adjusting sizes
-  private Map<PhysicsBody, ContactManifold> mcCollisionBodyManifoldMap;
+  private Map<PhysicsBody, ContactManifoldBasic> mcCollisionBodyManifoldMap;
 
   private Vector2D mcTranslationalForce,
                    mcTranslationalForceConst;
@@ -49,7 +49,7 @@ abstract public class RigidBody extends KinematicBody
     mbApplyGravity = true;
   }
 
-  abstract public void collide (PhysicsBody cBody, ContactManifold cManifold);
+  abstract public void collide (PhysicsBody cBody, ContactManifoldBasic cManifold);
 
   public void setRotationalDampening (double dampening)
   {
@@ -140,7 +140,7 @@ abstract public class RigidBody extends KinematicBody
     cBodies.hasNext ();)
     {
       PhysicsBody cBody = cBodies.next ();
-      ContactManifold cManifold = mcCollisionBodyManifoldMap.get (cBody);
+      ContactManifoldBasic cManifold = mcCollisionBodyManifoldMap.get (cBody);
       MinTransVec cMinTransVec = cManifold.mcMinTransVec;
   
       double penetrationDepth = cMinTransVec.mcMinTransVec.getMagnitude ();
@@ -175,7 +175,7 @@ abstract public class RigidBody extends KinematicBody
          cBodies.hasNext ();)
     {
       PhysicsBody cBody = cBodies.next ();
-      ContactManifold cManifold = mcCollisionBodyManifoldMap.get (cBody);
+      ContactManifoldBasic cManifold = mcCollisionBodyManifoldMap.get (cBody);
       Vector2D caContactPointsA[] = cManifold.mcaContactManifoldA,
                caContactPointsB[] = cManifold.mcaContactManifoldB;
 
@@ -286,7 +286,7 @@ abstract public class RigidBody extends KinematicBody
   }
 
   // this is object A, cBody is object B
-  public void calcPhysics (PhysicsBody cBody, ContactManifold cManifold, double delta)
+  public void calcPhysics (PhysicsBody cBody, ContactManifoldBasic cManifold, double delta)
   {
     //TODO may need to add constant amount to impulse to take into account seperation depth
     //TODO make sure that contactpoints for edges, the points at a given index correspond to the closest point on the other contact point array
@@ -398,7 +398,7 @@ abstract public class RigidBody extends KinematicBody
     }
   }
 
-  public void addCollidedBodyManifold (PhysicsBody cBody, ContactManifold cManifold)
+  public void addCollidedBodyManifold (PhysicsBody cBody, ContactManifoldBasic cManifold)
   {
     mcCollisionBodyManifoldMap.put (cBody, cManifold);
   }
@@ -471,7 +471,7 @@ private void calcFriction (double delta)
          cBodies.hasNext ();)
     {
       PhysicsBody cBody = cBodies.next ();
-      ContactManifold cManifold = mcCollisionBodyManifoldMap.get (cBody);
+      ContactManifoldBasic cManifold = mcCollisionBodyManifoldMap.get (cBody);
 
       //normal to collision surface
       Vector2D cNormal = cManifold.mcNormalA;

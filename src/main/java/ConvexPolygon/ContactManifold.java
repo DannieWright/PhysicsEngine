@@ -1,57 +1,54 @@
 package ConvexPolygon;
 
 import Vectors.Vector2D;
+import java.util.HashMap;
+import java.util.Set;
 
-/**
- * Implements class to represent a contact manifold for two polygons
- *
- * @author  Dannie Wright
- * @since   7/2/2018
- */
 
-public class ContactManifold
-{
-  public Vector2D mcaContactManifoldA[],
-                  mcNormalA,
-                  mcaContactManifoldB[],
-                  mcNormalB;
-  public MinTransVec mcMinTransVec;
+public class ContactManifold {
+  private HashMap<Shape,ContactEdge> mContactEdgeMap;
 
-  /**
-   * Initializes class to given values
-   *
-   * @param caContactManifoldA - contact points for first object
-   * @param cNormalA           - normal to the surface at the contact points
-   * @param caContactManifoldB - contact points for second object
-   * @param cNormalB           - normal to the surface at the contact points
-   */
-  public ContactManifold (Vector2D caContactManifoldA[], Vector2D cNormalA,
-                          Vector2D caContactManifoldB[], Vector2D cNormalB,
-                          MinTransVec cMinTransVec)
-  {
-    mcaContactManifoldA = caContactManifoldA;
-    mcNormalA = cNormalA;
-    mcaContactManifoldB = caContactManifoldB;
-    mcNormalB = cNormalB;
-    mcMinTransVec = cMinTransVec;
+  private static final int SIZE = 2;
+
+  public ContactManifold () {
+    mContactEdgeMap = new HashMap<>(ContactManifold.SIZE);
   }
 
-  public void swap ()
-  {
-    Vector2D caContactManifoldA[] = mcaContactManifoldA,
-             cNormalA = mcNormalA;
-
-    mcaContactManifoldA = mcaContactManifoldB;
-    mcNormalA = mcNormalB;
-    mcaContactManifoldB = caContactManifoldA;
-    mcNormalB = cNormalA;
+  public ContactManifold (ContactManifold cOther) {
+    mContactEdgeMap = new HashMap<>(ContactManifold.SIZE);
+    for (Shape cKey : cOther.mContactEdgeMap.keySet()) {
+      mContactEdgeMap.put(cKey, new ContactEdge(
+        cOther.mContactEdgeMap.get(cKey)));
+    }
   }
 
-  public ContactManifold getSwap ()
-  {
-    return new ContactManifold (mcaContactManifoldB, mcNormalB,
-                                mcaContactManifoldA, mcNormalA,
-                                mcMinTransVec);
+
+  public void insert (Shape cShape, ContactEdge cEdge) {
+    if (mContactEdgeMap.size() < ContactManifold.SIZE) {
+      mContactEdgeMap.put(cShape, cEdge);
+    }
   }
 
+  public ContactEdge find (Shape cShape) {
+    ContactEdge cTemp = mContactEdgeMap.get(cShape);
+    if (null != cTemp) {
+      return new ContactEdge(cTemp);
+    }
+    return null;
+  }
+
+  public boolean equals (ContactManifold cOther) {
+    if (cOther.mContactEdgeMap.size() != mContactEdgeMap.size()) {
+      return false;
+    }
+
+    for (Shape cShape :  mContactEdgeMap.keySet()) {
+      if (!mContactEdgeMap.get(cShape).equals(
+          cOther.mContactEdgeMap.get(cShape))) {
+        return false;
+      }
+    }
+
+    return true;
+  }
 }

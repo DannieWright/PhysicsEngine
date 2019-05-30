@@ -2,9 +2,8 @@ package PhysicsBodies;
 
 import AABBTree.AABB;
 import AABBTree.AABBObject;
-import ConvexPolygon.ContactManifold;
+import ConvexPolygon.ContactManifoldBasic;
 import ConvexPolygon.MinTransVec;
-import ConvexPolygon.Polygon;
 import ConvexPolygon.Shape;
 import PhysicsEngine.PhysicsEngine;
 import Vectors.Vector2D;
@@ -103,7 +102,7 @@ abstract public class PhysicsBody extends AABBObject
   //users should NOT call move or rotate functions from this collide function
   //as the AABB of the object will not be updated until the end of their turn
   //but the Shape will immediately, which can effect collision detection
-  abstract public void collide (PhysicsBody cBody, ContactManifold cManifold);
+  abstract public void collide (PhysicsBody cBody, ContactManifoldBasic cManifold);
 
 
   //called if body checks for collisions and/or if body sets mbForceUpdate
@@ -174,7 +173,7 @@ abstract public class PhysicsBody extends AABBObject
     mcNoCollideClassSet.clear ();
   }
 
-  public ContactManifold contactManifold (PhysicsBody cBody)
+  public ContactManifoldBasic contactManifold (PhysicsBody cBody)
   {
     MinTransVec cMinTransVec = Shape.overlap (this.mcShape, cBody.mcShape);
 

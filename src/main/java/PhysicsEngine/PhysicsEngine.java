@@ -2,8 +2,7 @@ package PhysicsEngine;
 
 import AABBTree.AABBTree;
 import AABBTree.AABBObject;
-import ConvexPolygon.ContactManifold;
-import PhysicsBodies.KinematicBody;
+import ConvexPolygon.ContactManifoldBasic;
 import PhysicsBodies.PhysicsBody;
 import PhysicsBodies.RigidBody;
 import Vectors.Vector2D;
@@ -335,7 +334,7 @@ public class PhysicsEngine
 
           //generate contact manifold for bodies, where manifold A values
           //are for cBodyA and manifold B values are for cBodyB
-          ContactManifold cManifold = cBodyA.contactManifold (cBodyB);
+          ContactManifoldBasic cManifold = cBodyA.contactManifold (cBodyB);
 
           //if bodies are not colliding, move onto next candidate
           if (null == cManifold)

@@ -19,16 +19,24 @@ public interface IVector2D
 
   double angle (Vector2D cVec);
   double dot (Vector2D cVec);
+  double getMagnitude ();
+  double getMagnitudeSqrd ();
+  boolean zeroMagnitude ();
+  boolean zeroMagnitudeSqrd();
   double cross (Vector2D cVec);
 
   Vector2D unit ();
   Vector2D getUnit ();
 
   double projection (Vector2D cAxis);
+  boolean contains (Vector2D cPoint);
 
   Vector2D getNormal (VectorOrientation eOrientation);
+  Vector2D getNormal (Vector2D cChange, IVector2D.VectorOrientation eOrientation);
   Vector2D getNormalCW ();
+  Vector2D getNormalCW (Vector2D cChange);
   Vector2D getNormalCCW ();
+  Vector2D getNormalCCW (Vector2D cChange);
   Vector2D getTangent (Vector2D cVec);
   boolean perpendicular (Vector2D cAxis);
   boolean parallel (Vector2D cAxis);

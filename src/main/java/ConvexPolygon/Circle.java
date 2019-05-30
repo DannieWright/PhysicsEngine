@@ -3,6 +3,7 @@ package ConvexPolygon;
 import AABBTree.AABB;
 import Vectors.IVector2D;
 import Vectors.Line;
+import Vectors.Line2D;
 import Vectors.Vector2D;
 
 
@@ -13,9 +14,10 @@ import Vectors.Vector2D;
  * @since   7/5/2018
  */
 
-public class Circle extends Shape
-{
+public class Circle extends Shape {
+
   private static final double APPROX_ZERO = 1.0E-14d;
+
   double mRadius;
 
   /**
@@ -45,7 +47,7 @@ public class Circle extends Shape
    */
   public Circle (double centerX, double centerY, double radius)
   {
-    super (new Vector2D (centerX, centerY));
+    super (centerX, centerY);
     mRadius = radius;
 
     //TODO handle error
@@ -53,6 +55,11 @@ public class Circle extends Shape
     {
 
     }
+  }
+
+  public Circle (Circle cOther) {
+    super (cOther.mcCenter);
+    mRadius = cOther.mRadius;
   }
 
   /**
@@ -158,7 +165,7 @@ public class Circle extends Shape
    *
    * @return contact manifold for both shapes, else null on failure
    */
-  public ContactManifold contactManifold (Shape cShapeA, MinTransVec cMinTransVec)
+  public ContactManifoldBasic contactManifold (Shape cShapeA, MinTransVec cMinTransVec)
   {
     //the minimum translational vector points from shape A to shape B,
     //where this is shape B
@@ -171,7 +178,7 @@ public class Circle extends Shape
              cNormalA = new Vector2D (cMinTrans),
              cNormalB = cMinTrans.getMirror ();
 
-    return new ContactManifold (caContactA, cNormalA, caContactB, cNormalB,
+    return new ContactManifoldBasic(caContactA, cNormalA, caContactB, cNormalB,
                                 cMinTransVec);
   }
 
@@ -180,8 +187,7 @@ public class Circle extends Shape
    *
    * @param angle - angle of rotation
    */
-  public void rotate (double angle)
-  {
+  public void rotate (double angle) {
   }
 
   public AABB getAABB ()
@@ -205,5 +211,94 @@ public class Circle extends Shape
             && Math.abs (this.mRadius - cCircle.mRadius) < Circle.APPROX_ZERO;
     }
     return false;
+  }
+
+
+  /**
+   * Returns the minimum translational vector's axis between this shape and
+   * the given shape, where the vector is potentially mirrored to the
+   * actual minimum translational vector but has the same magnitude
+   *
+   * @param cOther - other shape being compared
+   *
+   * @return - minimum translational vector's axis and magnitude between
+   * this shape and the given shape if the shapes overlap, else null
+   */
+  protected Vector2D overlapVector (Shape cOther) {
+    Vector2D cCenter = new Vector2D(mcCenter),
+             cDeepestPoint = cOther.closestPointInShape(mcCenter),
+             cDiff = cDeepestPoint.getSubtract(cCenter);
+
+    //if point is outside radius of this circle: shape's don't overlap
+    if (cDiff.getMagnitudeSqrd() > mRadius * mRadius) {
+      return null;
+    }
+
+    //return the vector in between the deepestPoint in the other shape
+    // and the edge of this circle that is closest to the deepestPoint
+    return cDiff.getUnit().scale(mRadius).subtract(cDiff);
+  }
+
+  /**
+   * Returns the points on this shape that are cover the most area across
+   * the given axis. That is, if this shape were to be projected onto the
+   * given axis, the returned Line2D contains the points on this shape that
+   * result in the that projection. The resulting Line2D points in direction
+   * of axis
+   *
+   * @param cAxis - axis covering
+   *
+   * @return - points on this shape that would result in the greatest
+   * projection across the given axis
+   */
+  protected Line2D boundingPoints (Vector2D cAxis) {
+    //normalize the axis, then scale it by the length of the radius
+    Vector2D cAxisMag = cAxis.getUnit().scale(mRadius);
+    //return the Line2D where it points along cAxis (so dot product would be
+    //pos)
+    return new Line2D (mcCenter.getSubtract(cAxisMag),
+                       mcCenter.getAdd(cAxisMag));
+  }
+
+  /**
+   * Returns the edge that has the normal the most in the direction of
+   * the given axis
+   *
+   * @param cAxis - normal axis being compared to the normals of this
+   *              shapes edges
+   *
+   * @return - the edge whose normal is the most in the direction of the
+   * given axis
+   */
+  protected Line2D bestEdge (Vector2D cAxis) {
+    //normalize the axis, then scale it by the length of the radius
+    Vector2D cAxisMag = cAxis.getUnit().scale(mRadius),
+             cEdgePoint = mcCenter.getAdd(cAxisMag);
+    //return the point most in the direction of the axis as an edge
+    return new Line2D (cEdgePoint, cEdgePoint);
+  }
+
+  /**
+   * Returns the closest point on this shape's edges to the given point
+   *
+   * @param cPoint - point being compared to
+   *
+   * @return - point on the surface of this shape that is the closest to
+   * the given point
+   */
+  public Vector2D closestPointOnEdge (Vector2D cPoint) {
+    return cPoint.getSubtract(mcCenter).unit().scale(mRadius); //maybe problems if at mcCenter
+  }
+
+
+  /**
+   * Returns whether the given point is contained in this shape
+   *
+   * @param cPoint - point being checked if it is in this shape
+   *
+   * @return - true if the point is contained in this shape, else false
+   */
+  public boolean containsPoint (Vector2D cPoint) {
+    return mcCenter.distanceSquared(cPoint) <= mRadius * mRadius;
   }
 }

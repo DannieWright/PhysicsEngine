@@ -87,6 +87,17 @@ public class Line
   }
 
   /**
+   * Returns whether the given point is contained in this Line
+   *
+   * @param cPoint - Point being checked if it is on this line
+   *
+   * @return - true if the point is in between this line's min and max values
+   */
+  public boolean contains (double cPoint) {
+    return this.mMin <= cPoint && this.mMax >= cPoint;
+  }
+
+  /**
    * Returns data members as a string
    *
    * @return data members as a string

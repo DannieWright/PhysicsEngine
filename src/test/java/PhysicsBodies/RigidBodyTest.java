@@ -1,7 +1,7 @@
 package PhysicsBodies;
 
 import ConvexPolygon.Circle;
-import ConvexPolygon.ContactManifold;
+import ConvexPolygon.ContactManifoldBasic;
 import ConvexPolygon.Rectangle;
 import Vectors.Vector2D;
 import org.junit.Test;
@@ -19,7 +19,7 @@ public class RigidBodyTest
     }
 
     @Override
-    public void collide (PhysicsBody cBody, ContactManifold cManifold)
+    public void collide (PhysicsBody cBody, ContactManifoldBasic cManifold)
     {
 
     }
@@ -39,7 +39,7 @@ public class RigidBodyTest
 
 
     @Override
-    public void collide (PhysicsBody cBody, ContactManifold cManifold)
+    public void collide (PhysicsBody cBody, ContactManifoldBasic cManifold)
     {
 
     }
@@ -53,7 +53,7 @@ public class RigidBodyTest
     }
 
     @Override
-    public void collide (PhysicsBody cBody, ContactManifold cManifold)
+    public void collide (PhysicsBody cBody, ContactManifoldBasic cManifold)
     {
 
     }
@@ -86,7 +86,7 @@ public class RigidBodyTest
     cBall.setInertia (10);
     cBall.mcVelocity = cVelocity;
 
-    ContactManifold cManifold = cBall.contactManifold (cWall);
+    ContactManifoldBasic cManifold = cBall.contactManifold (cWall);
 
     assertNotNull ("cManifold != null", cManifold);
 

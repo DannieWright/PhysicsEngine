@@ -1,6 +1,6 @@
 package PhysicsBodies;
 
-import ConvexPolygon.ContactManifold;
+import ConvexPolygon.ContactManifoldBasic;
 import ConvexPolygon.Shape;
 
 abstract public class StaticBody extends PhysicsBody
@@ -10,6 +10,6 @@ abstract public class StaticBody extends PhysicsBody
     super (cShape);
   }
 
-  abstract public void collide (PhysicsBody cBody, ContactManifold cManifold);
+  abstract public void collide (PhysicsBody cBody, ContactManifoldBasic cManifold);
   abstract public void update (double delta);
 }

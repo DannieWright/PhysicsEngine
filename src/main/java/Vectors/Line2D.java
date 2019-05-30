@@ -10,9 +10,9 @@ package Vectors;
 
 public class Line2D implements IVector2D
 {
-  public Vector2D mcStart,
-                  mcEnd;
-  private Vector2D mcDifference;
+  private Vector2D mcStart,
+                   mcEnd,
+                   mcDifference;
 
   /**
    * Initializes data members to given values
@@ -22,9 +22,13 @@ public class Line2D implements IVector2D
    */
   public Line2D (Vector2D cStart, Vector2D cEnd)
   {
-    mcStart = cStart;
-    mcEnd = cEnd;
+    mcStart = new Vector2D(cStart);
+    mcEnd = new Vector2D(cEnd);
     mcDifference = cEnd.getSubtract (cStart);
+  }
+
+  public Line2D (Line2D cOther) {
+    this (new Vector2D (cOther.mcStart), new Vector2D(cOther.mcEnd));
   }
 
   /**
@@ -114,6 +118,20 @@ public class Line2D implements IVector2D
     return mcDifference.projection (cAxis);
   }
 
+  public boolean contains (Vector2D cPoint) {
+    return mcDifference.contains(cPoint.getSubtract(mcStart));
+  }
+
+
+
+  public Line toLine () {
+    return new Line (mcStart.getMagnitude(), mcEnd.getMagnitude());
+  }
+
+  public Line toLineSqrd () {
+    return new Line (mcStart.getMagnitudeSqrd(), mcEnd.getMagnitudeSqrd());
+  }
+
   /**
    * Returns the projection of this line onto the given line
    *
@@ -138,6 +156,11 @@ public class Line2D implements IVector2D
     return mcDifference.getNormal (eOrientation);
   }
 
+
+  public Vector2D getNormal (Vector2D cChange, IVector2D.VectorOrientation eOrientation) {
+    return mcDifference.getNormal(cChange, eOrientation);
+  }
+
   /**
    * Returns the normal of this line with clockwise orientation
    *
@@ -146,6 +169,11 @@ public class Line2D implements IVector2D
   public Vector2D getNormalCW ()
   {
     return mcDifference.getNormalCW ();
+  }
+
+
+  public Vector2D getNormalCW (Vector2D cChange) {
+    return mcDifference.getNormalCW (cChange);
   }
 
   /**
@@ -157,6 +185,11 @@ public class Line2D implements IVector2D
   public Vector2D getNormalCCW ()
   {
     return mcDifference.getNormalCCW ();
+  }
+
+
+  public Vector2D getNormalCCW (Vector2D cChange) {
+    return mcDifference.getNormalCCW(cChange);
   }
 
   public Vector2D getTangent (Vector2D cVec)
@@ -220,6 +253,12 @@ public class Line2D implements IVector2D
     this.mcEnd.add (cVec);
 
     return new Vector2D (mcDifference);
+  }
+
+  public Line2D shift (Vector2D cVec) {
+    this.mcStart.add(cVec);
+    this.mcEnd.add(cVec);
+    return this;
   }
 
   /**
@@ -366,25 +405,19 @@ public class Line2D implements IVector2D
   public Line2D overlap (Line2D cLine)
   {
     Vector2D cDifferenceAxis = this.mcDifference.getUnit ();
-    double thisStart,
-           thisEnd,
-           otherStart,
-           otherEnd;
-    Vectors.Line cThis,
-         cOther;
-
     //determine projection of starting and ending points onto
     //this.mcDifference
-    thisStart = this.mcStart.dot (cDifferenceAxis);
-    thisEnd = this.mcEnd.dot (cDifferenceAxis);
-    otherStart = cLine.mcStart.dot (cDifferenceAxis);
-    otherEnd = cLine.mcEnd.dot (cDifferenceAxis);
+    double thisStart = this.mcStart.dot (cDifferenceAxis),
+           thisEnd = this.mcEnd.dot (cDifferenceAxis),
+           otherStart = cLine.mcStart.dot (cDifferenceAxis),
+           otherEnd = cLine.mcEnd.dot (cDifferenceAxis);
 
     //create 1D lines based on projections
-    cThis = thisStart < thisEnd ? new Vectors.Line (thisStart, thisEnd)
-                                : new Vectors.Line (thisEnd, thisStart);
-    cOther = otherStart < otherEnd ? new Vectors.Line (otherStart, otherEnd)
-                                   : new Vectors.Line (otherEnd, otherStart);
+    Vectors.Line cThis = thisStart < thisEnd ? new Vectors.Line (thisStart,
+                          thisEnd) : new Vectors.Line (thisEnd, thisStart),
+                 cOther = otherStart < otherEnd ? new Vectors.Line (
+                          otherStart, otherEnd) : new Vectors.Line (otherEnd,
+                          otherStart);
 
     //obtain overlap between these lines
     Vectors.Line cOverlap = cThis.getOverlapLine (cOther);
@@ -411,8 +444,59 @@ public class Line2D implements IVector2D
     return mcDifference.equals (cVec);
   }
 
+  public boolean equals (Line2D cOther) {
+    return mcStart.equals(cOther.mcStart) && mcEnd.equals(cOther.mcEnd);
+  }
+
+  /**
+   * Returns if the lines have the same endpoints but may point in opposite
+   * directions
+   *
+   * @param cOther - other line being compared to this line
+   *
+   * @return - true if the lines have the same endpoints, false if either
+   * endpoint is not equal to one of cOther's endpoints
+   */
+  public boolean equalsUndirected (Line2D cOther) {
+    return (mcStart.equals(cOther.mcStart) && mcEnd.equals(cOther.mcEnd))
+        || (mcEnd.equals(cOther.mcStart) && mcStart.equals(cOther.mcEnd));
+  }
+
   public Vector2D getDifference ()
   {
     return new Vector2D (mcDifference);
   }
+
+  public Vector2D[] toArray () {
+    return new Vector2D[] {new Vector2D(mcStart), new Vector2D(mcEnd)};
+  }
+
+  public Vector2D getStart () {
+    return new Vector2D (mcStart);
+  }
+
+  public Vector2D getEnd () {
+    return new Vector2D (mcEnd);
+  }
+
+  @Override
+  public double getMagnitude () {
+    return mcDifference.getMagnitude();
+  }
+
+  @Override
+  public double getMagnitudeSqrd () {
+    return mcDifference.getMagnitudeSqrd();
+  }
+
+  @Override
+  public boolean zeroMagnitude () {
+    return mcDifference.zeroMagnitude();
+  }
+
+  @Override
+  public boolean zeroMagnitudeSqrd () {
+    return mcDifference.zeroMagnitudeSqrd();
+  }
+
 }

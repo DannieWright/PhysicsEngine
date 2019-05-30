@@ -2,6 +2,7 @@ package ConvexPolygon;
 
 import AABBTree.AABB;
 import Vectors.Line;
+import Vectors.Line2D;
 import Vectors.Vector2D;
 
 /**
@@ -17,21 +18,276 @@ abstract public class Shape
 
   Shape (Vector2D cCenter)
   {
-    mcCenter = cCenter;
+    mcCenter = new Vector2D(cCenter);
   }
 
-  abstract Line projection (Vector2D cAxis);
-  abstract Vector2D[] getNormals ();
-  abstract public boolean equals (Shape cShape);
-  abstract protected ContactManifold contactManifold (Shape cShapeA,
-                                                      MinTransVec cMinTransVec);
+  Shape (double centerX, double centerY) {
+    mcCenter = new Vector2D(centerX, centerY);
+  }
 
-  public ContactManifold contactManifold (MinTransVec cMinTransVec)
+
+  @Deprecated
+  abstract Vector2D[] getNormals ();
+
+  @Deprecated
+  abstract protected ContactManifoldBasic contactManifold (Shape cShapeA,
+                                                           MinTransVec cMinTransVec);
+  //rotates ccw
+  abstract public void rotate (double angle);
+  abstract public AABB getAABB ();
+  abstract Line projection (Vector2D cAxis);
+  abstract public boolean equals (Shape cShape);
+
+
+  /**
+   * Returns the minimum translational vector's axis between this shape and
+   * the given shape, where the vector is along potentially mirrored to the
+   * actual minimum translational vector and has the same magnitude
+   *
+   * @param cOther - other shape being compared
+   *
+   * @return - minimum translational vector's axis and magnitude between
+   * this shape and the given shape if the shapes overlap, else null
+   */
+  abstract protected Vector2D overlapVector (Shape cOther);
+
+  /**
+   * Returns the points on this shape that are cover the most area across
+   * the given axis. That is, if this shape were to be projected onto the
+   * given axis, the returned Line2D contains the points on this shape that
+   * result in the that projection. The resulting Line2D points in direction
+   * of axis
+   *
+   * @param cAxis - axis covering
+   *
+   * @return - points on this shape that would result in the greatest
+   * projection across the given axis
+   */
+  abstract protected Line2D boundingPoints (Vector2D cAxis);
+
+  /**
+   * Returns the edge that has the normal the most in the direction of
+   * the given axis
+   *
+   * @param cAxis - normal axis being compared to the normals of this
+   *              shapes edges
+   *
+   * @return - the edge whose normal is the most in the direction of the
+   * given axis
+   */
+  abstract protected Line2D bestEdge (Vector2D cAxis);
+
+  /**
+   * Returns the closest point on this shape's edges to the given point
+   *
+   * @param cPoint - point being compared to
+   *
+   * @return - point on the surface of this shape that is the closest to
+   * the given point
+   */
+  abstract public Vector2D closestPointOnEdge (Vector2D cPoint);
+
+  /**
+   * Returns whether the given point is contained in this shape (edges not
+   * necessarily included)
+   *
+   * @param cPoint - point being checked if it is in this shape
+   *
+   * @return - true if the point is contained in this shape, else false
+   */
+  abstract public boolean containsPoint (Vector2D cPoint);
+
+  /**
+   * Returns the closest point in this shape (with this shapes edges being
+   * inclusively considered as apart of this shape)
+   *
+   * @param cPoint - point being compared to
+   *
+   * @return - point on the surface of this shape or in this shape that
+   * is the closest to the given point
+   */
+  public Vector2D closestPointInShape (Vector2D cPoint) {
+    //if this contains the point: just return that point
+    if (this.containsPoint(cPoint)) {
+      return new Vector2D(cPoint);
+    }
+    //else point is outside this shape, so return point on edge closest to
+    //the point
+    return this.closestPointOnEdge(cPoint);
+  }
+
+  /**
+   * Generates the contact manifold between overlapping shapes
+   *
+   * @param cOther - other shape being compared to overlapping this shape
+   *
+   * @return - contact manifold between these shapes if shapes overlap,
+   * else returns null
+   */
+  public ContactManifold contactManifold (Shape cOther) {
+    Vector2D cThisMinTransVec = this.overlapVector(cOther),
+             cOtherMinTransVec = cOther.overlapVector(this);
+
+    //if shapes do not overlap, return null
+    if (null == cThisMinTransVec || null == cOtherMinTransVec) {
+      return null;
+    }
+
+    //if this shapes min separation distance is less than other's:
+    //use this min trans vec to generate contact manifold
+    if (cThisMinTransVec.getMagnitudeSqrd()
+      < cOtherMinTransVec.getMagnitudeSqrd()) {
+      return this.contactEdges(cOther, cThisMinTransVec);
+    }
+    //else use other's trans vec to generate contact manifold
+    else {
+      return cOther.contactEdges(this, cOtherMinTransVec);
+    }
+  }
+
+  /**
+   * Determines where the shapes contact each other given the minimum
+   * translational vector for this shape
+   *
+   * @param cOther - other shape being checked for contact
+   * @param cMinTransVec - minimum translational vector for this
+   *
+   * @return the contact information representing where this polygon is
+   * in contact with cOther. null if there is no collision between the
+   * shapes
+   */
+  protected ContactManifold contactEdges (Shape cOther, Vector2D cMinTransVec) {
+
+    //determine if min trans vec points towards middle or not
+    { //reorient min trans vec if needed
+      Line2D cBoundPtsThis = this.boundingPoints(cMinTransVec),
+             cBoundPtsOther = cOther.boundingPoints(cMinTransVec);
+      Vector2D cMinThis = cBoundPtsThis.getStart(),
+               cMaxThis = cBoundPtsThis.getEnd(),
+               cMinOther = cBoundPtsOther.getStart(),
+               cMaxOther = cBoundPtsOther.getEnd();
+
+      //determine min direction shapes need to move to separate
+      if (Math.abs(cMaxThis.getSubtract(cMinOther).dot(cMinTransVec))
+        < Math.abs(cMaxOther.getSubtract(cMinThis).dot(cMinTransVec))) {
+        //if min trans vec points into this shape: it should point out,
+        //so mirror it
+        if (mcCenter.getSubtract(cMaxThis).dot(cMinTransVec) > 0) {
+          cMinTransVec.mirror();
+        }
+      }
+      else {
+        if (mcCenter.getSubtract(cMinThis).dot(cMinTransVec) > 0) {
+          cMinTransVec.mirror();
+        }
+      }
+    }
+
+    //get min trans vec for other
+    Vector2D cMinTransVecOther = cMinTransVec.getMirror();
+    //get the best edges for both shapes
+    Line2D cBestEdgeThis = this.bestEdge(cMinTransVec),
+           cBestEdgeOther = cOther.bestEdge(cMinTransVecOther),
+           cContactThis,
+           cContactOther;
+
+    //if the best edges are parallel: then the shapes have a contact surface
+    //(a line over which they make contact)
+    if (cBestEdgeThis.parallel(cBestEdgeOther)) {
+      cContactThis = cBestEdgeThis.overlap(cBestEdgeOther);
+      cContactOther = cBestEdgeOther.overlap(cBestEdgeThis);
+    }
+    //else the shapes only contact at a single point
+    else {
+      //if contact best edge for other is single point: use that point
+      if (cBestEdgeOther.zeroMagnitudeSqrd()) {
+        cContactOther = cBestEdgeOther;
+        cContactThis = (new Line2D(cContactOther)).shift(cMinTransVec);
+      }
+      //if contact best edge for this is single point: use that point
+      else if (cBestEdgeThis.zeroMagnitudeSqrd()) {
+        cContactThis = cBestEdgeThis;
+        cContactOther = (new Line2D(cContactThis)).shift (cMinTransVecOther);
+      }
+      //if best edges aren't parallel && neither are single points: then
+      //the vertex on the best edge that is the most in the same direction as
+      //the min trans vec is the best vertex
+      else {
+        Vector2D cVertex1,// = cBestEdgeThis.getStart(),
+                 cVertex2,// = cBestEdgeThis.getEnd(),
+                 cBestVertex;
+        double dot1,
+               dot2,
+               product;
+        boolean bUsedThisEdge;
+
+        //if this shape's best edge is not perpendicular to the
+        //min trans vec: then one vertex is deeper than the other
+        if (!cBestEdgeThis.perpendicular(cMinTransVec)) {
+          cVertex1 = cBestEdgeThis.getStart();
+          cVertex2 = cBestEdgeThis.getEnd();
+          dot1 = cVertex1.getSubtract(mcCenter).dot(cMinTransVec);
+          dot2 = cVertex2.getSubtract(mcCenter).dot(cMinTransVec);
+          bUsedThisEdge = true;
+        }
+        //else cOther's best edge must have a deepest vertex
+        else {
+          cVertex1 = cBestEdgeOther.getStart();
+          cVertex2 = cBestEdgeOther.getEnd();
+          dot1 = cVertex1.getSubtract(cOther.mcCenter).dot(cMinTransVecOther);
+          dot2 = cVertex2.getSubtract(cOther.mcCenter).dot(cMinTransVecOther);
+          bUsedThisEdge = false;
+        }
+
+        product = dot1 * dot2;
+
+        //is one vertex in the direction of the min trans vec, and the other
+        //is in the opposite direction (or one is zero)
+        if (product <= 0) {
+          //pick the vertex in the direction of the min trans vec
+          cBestVertex = dot1 > dot2 ? cVertex1 : cVertex2;
+        }
+        //both the relative vertices are going in the same direction as the
+        //min trans vec or both in the opposite direction
+        else {
+          //same direction
+          if (dot1 > 0) {
+            cBestVertex = dot1 > dot2 ? cVertex1 : cVertex2;
+          }
+          //opposite direction
+          else {
+            cBestVertex = dot1 < dot2 ? cVertex1 : cVertex2;
+          }
+        }
+
+        //set the contact points for each shape
+        if (bUsedThisEdge) {
+          cContactThis = new Line2D(cBestVertex, cBestVertex);
+          cContactOther = (new Line2D(cContactThis)).shift(cMinTransVecOther);
+        }
+        else {
+          cContactOther = new Line2D(cBestVertex, cBestVertex);
+          cContactThis = (new Line2D(cContactOther)).shift(cMinTransVec);
+        }
+
+      }
+    }
+
+    //generate manifold
+    ContactManifold cManifold = new ContactManifold();
+    cManifold.insert(this, new ContactEdge(cContactThis, cMinTransVec));
+    cManifold.insert(cOther, new ContactEdge(cContactOther, cMinTransVecOther));
+
+    return cManifold;
+  }
+
+  @Deprecated
+  public ContactManifoldBasic contactManifold (MinTransVec cMinTransVec)
   {
     Shape cOrigin = cMinTransVec.mcOrigin,
           cRecipient = cMinTransVec.mcRecipient;
 
-    ContactManifold cManifold = cRecipient.contactManifold (cOrigin,
+    ContactManifoldBasic cManifold = cRecipient.contactManifold (cOrigin,
                                            cMinTransVec);
 
     //make this shape be shape A in the contact manifold
@@ -43,9 +299,6 @@ abstract public class Shape
     return cManifold;
   }
 
-  //rotates ccw
-  abstract public void rotate (double angle);
-  abstract public AABB getAABB ();
 
   public Vector2D getCenter ()
   {
@@ -83,6 +336,7 @@ abstract public class Shape
    * @return - minimum translational vector class on overlap, else null if
    *           there is no overlap
    */
+  @Deprecated
   static public MinTransVec overlap (Shape cShapeA, Shape cShapeB)
   {
     //scalar overlap amount
@@ -192,4 +446,5 @@ abstract public class Shape
 
     return new MinTransVec (cMinTranslationVector, cOrigin, cRecipient);
   }
+
 }
