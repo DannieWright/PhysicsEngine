@@ -287,7 +287,7 @@ public class Polygon extends Shape
            temp;
 
     for (Line2D cEdge : caEdges) {
-      cNormal = cEdge.getNormal(cNormal, meNormalOrientation);
+      cNormal = cEdge.getNormal(cNormal, meNormalOrientation).unit();
       temp = cNormal.dot(cAxisNorm);
 
       //check if this edge's normal is more in the direction of cAxis then

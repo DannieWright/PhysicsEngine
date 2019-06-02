@@ -7,14 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709ea5c4-c95b-47ff-9ced-5d0fbf9aa485" name="Default Changelist" comment="Merge branch 'master' of https://github.com/DannieWright/PhysicsEngine&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/PhysicsEngine_main_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/PhysicsEngine_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/PhysicsEngine_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/PhysicsEngine_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/PhysicsEngine_main_jar/PhysicsEngine_main.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/PhysicsEngine_main_jar/PhysicsEngine_main.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/RigidBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/PhysicsBodies/RigidBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/PhysicsBodies/RigidBodyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/PhysicsBodies/RigidBodyTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhysicsBodies/RigidBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PhysicsBodies/RigidBodyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConvexPolygon/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConvexPolygon/Polygon.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -37,348 +32,117 @@
     <favorites_list name="PhysicsEngine" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4470743">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Shape.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="274">
-                  <caret line="319" column="25" selection-start-line="319" selection-start-column="25" selection-end-line="319" selection-end-column="25" />
-                  <folding>
-                    <element signature="docComment;class#Shape#0" />
-                    <element signature="docComment;method#overlapVector#0;class#Shape#0" />
-                    <element signature="docComment;method#boundingPoints#0;class#Shape#0" />
-                    <element signature="docComment;method#bestEdge#0;class#Shape#0" />
-                    <element signature="docComment;method#closestPointOnEdge#0;class#Shape#0" />
-                    <element signature="docComment;method#containsPoint#0;class#Shape#0" />
-                    <element signature="docComment;method#closestPointInShape#0;class#Shape#0" />
-                    <element signature="method#closestPointInShape#0;class#Shape#0" />
-                    <element signature="e#3316#3358#1" />
-                    <element signature="e#3363#3433#0" />
-                    <element signature="docComment;method#contactManifold#1;class#Shape#0" />
-                    <element signature="method#contactManifold#1;class#Shape#0" />
-                    <element signature="e#4040#4066#1" />
-                    <element signature="e#4072#4134#0" />
-                    <element signature="e#4420#4486#1" />
-                    <element signature="docComment;method#contactEdges#0;class#Shape#0" />
-                    <element signature="method#contactEdges#0;class#Shape#0" />
-                    <element signature="e#5622#5751#1" />
-                    <element signature="e#5632#5696#0" />
-                    <element signature="e#5804#5828#1" />
-                    <element signature="e#5868#5974#1" />
-                    <element signature="e#5958#5992#1" />
-                    <element signature="e#6136#6208#0" />
-                    <element signature="e#6301#6429#1" />
-                    <element signature="e#7016#11398#1" />
-                    <element signature="e#6596#6766#1" />
-                    <element signature="e#7341#7371#1" />
-                    <element signature="e#7309#7377#0" />
-                    <element signature="e#7815#11392#1" />
-                    <element signature="e#8115#8184#0" />
-                    <element signature="e#8341#8371#1" />
-                    <element signature="e#8686#8956#1" />
-                    <element signature="e#8414#8482#0" />
-                    <element signature="e#8565#8701#1" />
-                    <element signature="e#8710#8777#0" />
-                    <element signature="e#8849#9049#1" />
-                    <element signature="e#8875#8949#1" />
-                    <element signature="e#8965#9039#1" />
-                    <element signature="e#9524#9677#1" />
-                    <element signature="e#9691#9845#1" />
-                    <element signature="method#contactManifold#2;class#Shape#0" />
-                    <element signature="e#8081#8113#1" />
-                    <element signature="e#8587#8628#1" />
-                    <element signature="e#8944#8991#1" />
-                    <element signature="docComment;method#overlap#0;class#Shape#0" />
-                    <element signature="method#overlap#0;class#Shape#0" />
-                    <element signature="e#9465#9535#0" />
-                    <element signature="e#9632#9699#1" />
-                    <element signature="e#9739#9806#1" />
-                    <element signature="e#10073#11636#1" />
-                    <element signature="e#10272#11630#1" />
-                    <element signature="e#10525#10559#1" />
-                    <element signature="e#10581#11622#1" />
-                    <element signature="e#10664#10728#0" />
-                    <element signature="e#10898#11251#1" />
-                    <element signature="e#11105#11157#1" />
-                    <element signature="e#11187#11239#1" />
-                    <element signature="e#11263#11328#0" />
-                    <element signature="e#11444#11612#1" />
-                    <element signature="e#11681#11707#1" />
-                    <element signature="e#11714#11779#0" />
-                    <element signature="e#11873#11936#0" />
-                    <element signature="e#12337#12384#1" />
-                    <element signature="e#12425#12472#1" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Polygon.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-375">
-                  <caret line="542" column="42" selection-start-line="542" selection-start-column="42" selection-end-line="542" selection-end-column="42" />
-                  <folding>
-                    <element signature="docComment;class#Polygon#0" />
-                    <element signature="docComment;method#centroid#0;class#Polygon#0" />
-                    <element signature="docComment;method#projection#0;class#Polygon#0" />
-                    <element signature="method#projection#0;class#Polygon#0" />
-                    <element signature="docComment;method#getEdges#0;class#Polygon#0" />
-                    <element signature="method#getEdges#0;class#Polygon#0" />
-                    <element signature="docComment;method#deepestVertex#0;class#Polygon#0" />
-                    <element signature="method#deepestVertex#0;class#Polygon#0" />
-                    <element signature="method#contactManifold#0;class#Polygon#0" />
-                    <element signature="method#bestEdge#1;class#Polygon#0" />
-                    <element signature="method#offSet#0;class#Polygon#0" />
-                    <element signature="method#equals#0;class#Polygon#0" />
-                    <element signature="method#closestPointOnEdge#0;class#Polygon#0" />
-                    <element signature="method#triangleContainsPoint#0;class#Polygon#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/ConvexPolygon/PolygonTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="128">
-                  <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="20" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Circle.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-663">
-                  <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/ConvexPolygon/CircleTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsEngine/PhysicsEngine.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="76" column="16" lean-forward="true" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/ContactEdge.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/ContactManifold.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="372">
-                  <caret line="43" selection-start-line="43" selection-end-line="43" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#230#231#0" expanded="true" />
-                    <element signature="e#293#294#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/ContactManifoldBasic.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="186">
-                  <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/MinTransVec.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Rectangle.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-                  <folding>
-                    <element signature="e#1491#1492#0" expanded="true" />
-                    <element signature="e#1531#1532#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Line2D.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1110">
-                  <caret line="208" selection-start-line="208" selection-end-line="208" />
-                  <folding>
-                    <element signature="docComment;class#Line2D#0" />
-                    <element signature="e#302#446#0" />
-                    <element signature="e#302#617#0" />
-                    <element signature="e#730#922#0" />
-                    <element signature="e#1010#1207#0" />
-                    <element signature="e#1313#1522#0" />
-                    <element signature="e#1707#1920#0" />
-                    <element signature="e#2022#2062#0" />
-                    <element signature="e#2022#2206#0" />
-                    <element signature="e#2210#2312#0" />
-                    <element signature="e#2389#2589#0" />
-                    <element signature="e#3013#3209#0" />
-                    <element signature="e#3325#3538#0" />
-                    <element signature="e#3672#3822#0" />
-                    <element signature="e#3826#3983#0" />
-                    <element signature="e#4172#4356#0" />
-                    <element signature="e#4645#4865#0" />
-                    <element signature="e#4967#4968#0" expanded="true" />
-                    <element signature="e#4972#5186#0" />
-                    <element signature="e#5309#5519#0" />
-                    <element signature="e#5616#5820#0" />
-                    <element signature="e#5864#5865#0" expanded="true" />
-                    <element signature="e#5928#5929#0" expanded="true" />
-                    <element signature="e#5952#6097#0" />
-                    <element signature="e#6101#6213#0" />
-                    <element signature="e#6217#6273#0" />
-                    <element signature="e#6365#6515#0" />
-                    <element signature="e#6618#6774#0" />
-                    <element signature="e#6778#6938#0" />
-                    <element signature="e#6942#7058#0" />
-                    <element signature="e#7062#7228#0" />
-                    <element signature="e#7232#7354#0" />
-                    <element signature="e#7358#7477#0" />
-                    <element signature="e#7578#7729#0" />
-                    <element signature="e#7733#7946#0" />
-                    <element signature="e#7950#8121#0" />
-                    <element signature="e#8125#8296#0" />
-                    <element signature="e#8460#8576#0" />
-                    <element signature="e#8753#8913#0" />
-                    <element signature="e#9024#9081#0" />
-                    <element signature="e#9894#9920#1" />
-                    <element signature="e#9926#9993#0" />
-                    <element signature="e#10535#10536#0" expanded="true" />
-                    <element signature="e#10612#10613#0" expanded="true" />
-                    <element signature="e#10766#10767#0" expanded="true" />
-                    <element signature="e#10810#10811#0" expanded="true" />
-                    <element signature="e#10844#10845#0" expanded="true" />
-                    <element signature="e#10920#10921#0" expanded="true" />
-                    <element signature="e#10953#10954#0" expanded="true" />
-                    <element signature="e#10992#10993#0" expanded="true" />
-                    <element signature="e#11023#11024#0" expanded="true" />
-                    <element signature="e#11060#11061#0" expanded="true" />
-                    <element signature="e#11107#11108#0" expanded="true" />
-                    <element signature="e#11151#11152#0" expanded="true" />
-                    <element signature="e#11202#11203#0" expanded="true" />
-                    <element signature="e#11250#11251#0" expanded="true" />
-                    <element signature="e#11299#11300#0" expanded="true" />
-                    <element signature="e#11344#11345#0" expanded="true" />
-                    <element signature="e#11397#11398#0" expanded="true" />
-                    <element signature="e#11446#11447#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="82" column="8" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="8" />
-                  <folding>
-                    <element signature="docComment;class#Vector2D#0" />
-                    <element signature="e#330#2153#0" />
-                    <element signature="e#427#1139#0" />
-                    <element signature="e#649#887#1" />
-                    <element signature="e#727#810#1" />
-                    <element signature="e#895#916#0" />
-                    <element signature="e#988#1067#1" />
-                    <element signature="e#1145#2147#0" />
-                    <element signature="e#1405#1771#1" />
-                    <element signature="e#1494#1570#1" />
-                    <element signature="e#1663#1719#1" />
-                    <element signature="e#1779#1800#0" />
-                    <element signature="e#1885#1957#1" />
-                    <element signature="e#2047#2100#1" />
-                    <element signature="e#2503#2591#0" />
-                    <element signature="e#2595#2670#0" />
-                    <element signature="e#2676#2866#0" />
-                    <element signature="e#3385#3534#0" />
-                    <element signature="e#3540#3690#0" />
-                    <element signature="e#3801#3965#0" />
-                    <element signature="e#3801#4113#0" />
-                    <element signature="e#4117#4293#0" />
-                    <element signature="e#4300#4471#0" />
-                    <element signature="e#4477#4684#0" />
-                    <element signature="e#4688#4911#0" />
-                    <element signature="e#5766#5885#0" />
-                    <element signature="e#6019#6145#0" />
-                    <element signature="e#6284#6403#0" />
-                    <element signature="e#6409#6511#0" />
-                    <element signature="e#6517#6624#0" />
-                    <element signature="e#6628#6885#0" />
-                    <element signature="e#6891#7127#0" />
-                    <element signature="e#7133#7211#0" />
-                    <element signature="e#7217#7295#0" />
-                    <element signature="e#7301#7406#0" />
-                    <element signature="e#7808#7926#0" />
-                    <element signature="e#8029#8216#0" />
-                    <element signature="e#8331#8474#0" />
-                    <element signature="e#8478#8612#0" />
-                    <element signature="e#8616#8982#0" />
-                    <element signature="e#8986#9565#0" />
-                    <element signature="e#9304#9427#1" />
-                    <element signature="e#9328#9380#1" />
-                    <element signature="e#9474#9522#1" />
-                    <element signature="e#9569#10151#0" />
-                    <element signature="e#9881#10007#1" />
-                    <element signature="e#9906#9959#1" />
-                    <element signature="e#10058#10107#1" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2879">
+              <caret line="401" selection-start-line="401" selection-end-line="401" />
+              <folding>
+                <element signature="docComment;class#Vector2D#0" />
+                <element signature="e#427#1139#0" />
+                <element signature="e#649#887#1" />
+                <element signature="e#727#810#1" />
+                <element signature="e#895#916#0" />
+                <element signature="e#988#1067#1" />
+                <element signature="e#1145#2147#0" />
+                <element signature="e#1405#1771#1" />
+                <element signature="e#1494#1570#1" />
+                <element signature="e#1663#1719#1" />
+                <element signature="e#1779#1800#0" />
+                <element signature="e#1885#1957#1" />
+                <element signature="e#2047#2100#1" />
+                <element signature="e#2676#2866#0" />
+                <element signature="e#3385#3534#0" />
+                <element signature="e#3540#3690#0" />
+                <element signature="e#5124#5125#0" expanded="true" />
+                <element signature="e#5163#5164#0" expanded="true" />
+                <element signature="e#5215#5216#0" expanded="true" />
+                <element signature="e#5252#5253#0" expanded="true" />
+                <element signature="e#6370#6371#0" expanded="true" />
+                <element signature="e#6438#6439#0" expanded="true" />
+                <element signature="e#8487#8488#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Polygon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="289" column="68" selection-start-line="289" selection-start-column="68" selection-end-line="289" selection-end-column="68" />
+              <folding>
+                <element signature="docComment;class#Polygon#0" />
+                <element signature="docComment;method#centroid#0;class#Polygon#0" />
+                <element signature="docComment;method#projection#0;class#Polygon#0" />
+                <element signature="method#projection#0;class#Polygon#0" />
+                <element signature="docComment;method#getEdges#0;class#Polygon#0" />
+                <element signature="method#getEdges#0;class#Polygon#0" />
+                <element signature="docComment;method#deepestVertex#0;class#Polygon#0" />
+                <element signature="method#deepestVertex#0;class#Polygon#0" />
+                <element signature="method#contactManifold#0;class#Polygon#0" />
+                <element signature="method#bestEdge#1;class#Polygon#0" />
+                <element signature="method#offSet#0;class#Polygon#0" />
+                <element signature="method#equals#0;class#Polygon#0" />
+                <element signature="method#closestPointOnEdge#0;class#Polygon#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ConvexPolygon/CircleTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ConvexPolygon/PolygonTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="156" selection-start-line="156" selection-end-line="156" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Line2D.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4641">
+              <caret line="478" selection-start-line="478" selection-end-line="478" />
+              <folding>
+                <element signature="docComment;class#Line2D#0" />
+                <element signature="e#302#446#0" />
+                <element signature="e#302#617#0" />
+                <element signature="e#730#922#0" />
+                <element signature="e#1010#1207#0" />
+                <element signature="e#1313#1522#0" />
+                <element signature="e#1707#1920#0" />
+                <element signature="e#2022#2062#0" />
+                <element signature="e#2022#2206#0" />
+                <element signature="e#2210#2312#0" />
+                <element signature="e#2389#2589#0" />
+                <element signature="e#4918#4919#0" expanded="true" />
+                <element signature="e#4969#4970#0" expanded="true" />
+                <element signature="e#11351#11352#0" expanded="true" />
+                <element signature="e#11390#11391#0" expanded="true" />
+                <element signature="e#11458#11459#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -432,24 +196,74 @@
         <option value="$PROJECT_DIR$/src/main/java/ConvexPolygon/Circle.java" />
         <option value="$PROJECT_DIR$/src/test/java/ConvexPolygon/CircleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ConvexPolygon/Shape.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ConvexPolygon/Polygon.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ConvexPolygon/Polygon.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="931" />
-    <option name="height" value="996" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ConvexPolygon" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -486,39 +300,22 @@
               <item name="PhysicsEngine_main" type="616d4139:PackageViewModuleNode" />
               <item name="Vectors" type="1f31426a:PackageElementNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="PhysicsEngine" type="58d84e3e:PackageViewProjectNode" />
+              <item name="PhysicsEngine" type="eaaa3913:PackageViewModuleGroupNode" />
+              <item name="PhysicsEngine_test" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
-              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="PhysicsEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PhysicsEngine" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="PhysicsEngine" type="58d84e3e:PackageViewProjectNode" />
+              <item name="PhysicsEngine" type="eaaa3913:PackageViewModuleGroupNode" />
+              <item name="PhysicsEngine_test" type="616d4139:PackageViewModuleNode" />
+              <item name="ConvexPolygon" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -532,7 +329,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/git-bash.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20867209" />
@@ -559,7 +356,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PolygonTest.contactManifold">
+  <component name="RunManager" selected="JUnit.PolygonTest">
     <configuration name="ContactManifoldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PhysicsEngine_test" />
       <extension name="coverage">
@@ -570,6 +367,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="ConvexPolygon" />
       <option name="MAIN_CLASS_NAME" value="ConvexPolygon.ContactManifoldTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PhysicsEngine_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ConvexPolygon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ConvexPolygon" />
+      <option name="MAIN_CLASS_NAME" value="ConvexPolygon.PolygonTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -623,38 +435,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RigidBodyTest.calcPhysics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PhysicsEngine_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="PhysicsBodies.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="PhysicsBodies" />
-      <option name="MAIN_CLASS_NAME" value="PhysicsBodies.RigidBodyTest" />
-      <option name="METHOD_NAME" value="calcPhysics" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.RigidBodyTest.calcPhysics" />
       <item itemvalue="JUnit.ContactManifoldTest" />
       <item itemvalue="JUnit.PolygonTest.containsPoint" />
       <item itemvalue="JUnit.PolygonTest.closestPointOnEdge" />
       <item itemvalue="JUnit.PolygonTest.contactManifold" />
+      <item itemvalue="JUnit.PolygonTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PolygonTest" />
+        <item itemvalue="JUnit.PolygonTest.containsPoint" />
         <item itemvalue="JUnit.PolygonTest.contactManifold" />
         <item itemvalue="JUnit.PolygonTest.closestPointOnEdge" />
-        <item itemvalue="JUnit.PolygonTest.containsPoint" />
         <item itemvalue="JUnit.ContactManifoldTest" />
-        <item itemvalue="JUnit.RigidBodyTest.calcPhysics" />
       </list>
     </recent_temporary>
   </component>
@@ -680,35 +474,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 12h 59m 09s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest_containsPoint - 2019.06.01 at 20h 31m 11s.xml">
+      <configuration name="PolygonTest.containsPoint" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 13h 01m 21s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest_containsPoint - 2019.06.01 at 21h 23m 03s.xml">
+      <configuration name="PolygonTest.containsPoint" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 13h 02m 43s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest_containsPoint - 2019.06.01 at 21h 31m 19s.xml">
+      <configuration name="PolygonTest.containsPoint" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 13h 06m 10s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest_containsPoint - 2019.06.01 at 21h 49m 46s.xml">
+      <configuration name="PolygonTest.containsPoint" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 13h 08m 25s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest_containsPoint - 2019.06.01 at 21h 50m 18s.xml">
+      <configuration name="PolygonTest.containsPoint" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 13h 21m 56s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest_containsPoint - 2019.06.01 at 22h 06m 09s.xml">
+      <configuration name="PolygonTest.containsPoint" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 18h 40m 52s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest_containsPoint - 2019.06.01 at 22h 36m 08s.xml">
+      <configuration name="PolygonTest.containsPoint" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 18h 43m 30s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest_containsPoint - 2019.06.01 at 22h 36m 29s.xml">
+      <configuration name="PolygonTest.containsPoint" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 18h 46m 04s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest_containsPoint - 2019.06.01 at 22h 36m 42s.xml">
+      <configuration name="PolygonTest.containsPoint" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PolygonTest_contactManifold - 2019.05.29 at 18h 54m 31s.xml">
-      <configuration name="PolygonTest.contactManifold" configurationId="JUnit" />
+    <history-entry file="PolygonTest - 2019.06.01 at 22h 37m 17s.xml">
+      <configuration name="PolygonTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -721,10 +515,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1858" height="1002" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49578652" visible="true" weight="0.15406007" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49578652" visible="true" weight="0.14372164" />
       <window_info id="Structure" order="1" sideWeight="0.5042135" side_tool="true" weight="0.078657866" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -733,16 +526,16 @@
       <window_info id="Favorites" order="6" sideWeight="0.5042135" side_tool="true" weight="0.078657866" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.30724972" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49944994" visible="true" weight="0.3256617" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.11047181" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49944994" weight="0.29623568" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5040917" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32992035" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.18998863" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49889988" weight="0.32992035" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50055003" side_tool="true" weight="0.3265074" />
-      <window_info anchor="bottom" id="Build" order="10" weight="0.32992035" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32911393" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32569557" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -932,71 +725,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-          <folding>
-            <element signature="e#1439#1440#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#1464#1658#0" expanded="true" />
-            <element signature="e#1657#1658#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="369" selection-start-line="369" selection-end-line="369" />
-          <folding>
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2966#2967#0" expanded="true" />
-            <element signature="e#10310#10449#0" expanded="true" />
-            <element signature="e#10448#10449#0" expanded="true" />
-            <element signature="e#11040#11204#0" expanded="true" />
-            <element signature="e#11203#11204#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runner/JUnitCore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runner/JUnitCore.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/IVector2D.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -1004,10 +739,149 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="319" column="25" selection-start-line="319" selection-start-column="25" selection-end-line="319" selection-end-column="25" />
+          <folding>
+            <element signature="docComment;class#Shape#0" />
+            <element signature="docComment;method#overlapVector#0;class#Shape#0" />
+            <element signature="docComment;method#boundingPoints#0;class#Shape#0" />
+            <element signature="docComment;method#bestEdge#0;class#Shape#0" />
+            <element signature="docComment;method#closestPointOnEdge#0;class#Shape#0" />
+            <element signature="docComment;method#containsPoint#0;class#Shape#0" />
+            <element signature="docComment;method#closestPointInShape#0;class#Shape#0" />
+            <element signature="method#closestPointInShape#0;class#Shape#0" />
+            <element signature="docComment;method#contactManifold#1;class#Shape#0" />
+            <element signature="method#contactManifold#1;class#Shape#0" />
+            <element signature="docComment;method#contactEdges#0;class#Shape#0" />
+            <element signature="method#contactEdges#0;class#Shape#0" />
+            <element signature="method#contactManifold#2;class#Shape#0" />
+            <element signature="docComment;method#overlap#0;class#Shape#0" />
+            <element signature="method#overlap#0;class#Shape#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Circle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsEngine/PhysicsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/ContactEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/ContactManifold.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/ContactManifoldBasic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/MinTransVec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Rectangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding>
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ConvexPolygon/CircleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2879">
+          <caret line="401" selection-start-line="401" selection-end-line="401" />
+          <folding>
+            <element signature="docComment;class#Vector2D#0" />
+            <element signature="e#427#1139#0" />
+            <element signature="e#649#887#1" />
+            <element signature="e#727#810#1" />
+            <element signature="e#895#916#0" />
+            <element signature="e#988#1067#1" />
+            <element signature="e#1145#2147#0" />
+            <element signature="e#1405#1771#1" />
+            <element signature="e#1494#1570#1" />
+            <element signature="e#1663#1719#1" />
+            <element signature="e#1779#1800#0" />
+            <element signature="e#1885#1957#1" />
+            <element signature="e#2047#2100#1" />
+            <element signature="e#2676#2866#0" />
+            <element signature="e#3385#3534#0" />
+            <element signature="e#3540#3690#0" />
+            <element signature="e#5124#5125#0" expanded="true" />
+            <element signature="e#5163#5164#0" expanded="true" />
+            <element signature="e#5215#5216#0" expanded="true" />
+            <element signature="e#5252#5253#0" expanded="true" />
+            <element signature="e#6370#6371#0" expanded="true" />
+            <element signature="e#6438#6439#0" expanded="true" />
+            <element signature="e#8487#8488#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Line2D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1110">
-          <caret line="208" selection-start-line="208" selection-end-line="208" />
+        <state relative-caret-position="4641">
+          <caret line="478" selection-start-line="478" selection-end-line="478" />
           <folding>
             <element signature="docComment;class#Line2D#0" />
             <element signature="e#302#446#0" />
@@ -1020,63 +894,19 @@
             <element signature="e#2022#2206#0" />
             <element signature="e#2210#2312#0" />
             <element signature="e#2389#2589#0" />
-            <element signature="e#3013#3209#0" />
-            <element signature="e#3325#3538#0" />
-            <element signature="e#3672#3822#0" />
-            <element signature="e#3826#3983#0" />
-            <element signature="e#4172#4356#0" />
-            <element signature="e#4645#4865#0" />
-            <element signature="e#4967#4968#0" expanded="true" />
-            <element signature="e#4972#5186#0" />
-            <element signature="e#5309#5519#0" />
-            <element signature="e#5616#5820#0" />
-            <element signature="e#5864#5865#0" expanded="true" />
-            <element signature="e#5928#5929#0" expanded="true" />
-            <element signature="e#5952#6097#0" />
-            <element signature="e#6101#6213#0" />
-            <element signature="e#6217#6273#0" />
-            <element signature="e#6365#6515#0" />
-            <element signature="e#6618#6774#0" />
-            <element signature="e#6778#6938#0" />
-            <element signature="e#6942#7058#0" />
-            <element signature="e#7062#7228#0" />
-            <element signature="e#7232#7354#0" />
-            <element signature="e#7358#7477#0" />
-            <element signature="e#7578#7729#0" />
-            <element signature="e#7733#7946#0" />
-            <element signature="e#7950#8121#0" />
-            <element signature="e#8125#8296#0" />
-            <element signature="e#8460#8576#0" />
-            <element signature="e#8753#8913#0" />
-            <element signature="e#9024#9081#0" />
-            <element signature="e#9894#9920#1" />
-            <element signature="e#9926#9993#0" />
-            <element signature="e#10535#10536#0" expanded="true" />
-            <element signature="e#10612#10613#0" expanded="true" />
-            <element signature="e#10766#10767#0" expanded="true" />
-            <element signature="e#10810#10811#0" expanded="true" />
-            <element signature="e#10844#10845#0" expanded="true" />
-            <element signature="e#10920#10921#0" expanded="true" />
-            <element signature="e#10953#10954#0" expanded="true" />
-            <element signature="e#10992#10993#0" expanded="true" />
-            <element signature="e#11023#11024#0" expanded="true" />
-            <element signature="e#11060#11061#0" expanded="true" />
-            <element signature="e#11107#11108#0" expanded="true" />
-            <element signature="e#11151#11152#0" expanded="true" />
-            <element signature="e#11202#11203#0" expanded="true" />
-            <element signature="e#11250#11251#0" expanded="true" />
-            <element signature="e#11299#11300#0" expanded="true" />
-            <element signature="e#11344#11345#0" expanded="true" />
-            <element signature="e#11397#11398#0" expanded="true" />
-            <element signature="e#11446#11447#0" expanded="true" />
+            <element signature="e#4918#4919#0" expanded="true" />
+            <element signature="e#4969#4970#0" expanded="true" />
+            <element signature="e#11351#11352#0" expanded="true" />
+            <element signature="e#11390#11391#0" expanded="true" />
+            <element signature="e#11458#11459#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Polygon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="542" column="42" selection-start-line="542" selection-start-column="42" selection-end-line="542" selection-end-column="42" />
+        <state relative-caret-position="85">
+          <caret line="289" column="68" selection-start-line="289" selection-start-column="68" selection-end-line="289" selection-end-column="68" />
           <folding>
             <element signature="docComment;class#Polygon#0" />
             <element signature="docComment;method#centroid#0;class#Polygon#0" />
@@ -1091,220 +921,17 @@
             <element signature="method#offSet#0;class#Polygon#0" />
             <element signature="method#equals#0;class#Polygon#0" />
             <element signature="method#closestPointOnEdge#0;class#Polygon#0" />
-            <element signature="method#triangleContainsPoint#0;class#Polygon#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Shape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="319" column="25" selection-start-line="319" selection-start-column="25" selection-end-line="319" selection-end-column="25" />
-          <folding>
-            <element signature="docComment;class#Shape#0" />
-            <element signature="docComment;method#overlapVector#0;class#Shape#0" />
-            <element signature="docComment;method#boundingPoints#0;class#Shape#0" />
-            <element signature="docComment;method#bestEdge#0;class#Shape#0" />
-            <element signature="docComment;method#closestPointOnEdge#0;class#Shape#0" />
-            <element signature="docComment;method#containsPoint#0;class#Shape#0" />
-            <element signature="docComment;method#closestPointInShape#0;class#Shape#0" />
-            <element signature="method#closestPointInShape#0;class#Shape#0" />
-            <element signature="e#3316#3358#1" />
-            <element signature="e#3363#3433#0" />
-            <element signature="docComment;method#contactManifold#1;class#Shape#0" />
-            <element signature="method#contactManifold#1;class#Shape#0" />
-            <element signature="e#4040#4066#1" />
-            <element signature="e#4072#4134#0" />
-            <element signature="e#4420#4486#1" />
-            <element signature="docComment;method#contactEdges#0;class#Shape#0" />
-            <element signature="method#contactEdges#0;class#Shape#0" />
-            <element signature="e#5622#5751#1" />
-            <element signature="e#5632#5696#0" />
-            <element signature="e#5804#5828#1" />
-            <element signature="e#5868#5974#1" />
-            <element signature="e#5958#5992#1" />
-            <element signature="e#6136#6208#0" />
-            <element signature="e#6301#6429#1" />
-            <element signature="e#7016#11398#1" />
-            <element signature="e#6596#6766#1" />
-            <element signature="e#7341#7371#1" />
-            <element signature="e#7309#7377#0" />
-            <element signature="e#7815#11392#1" />
-            <element signature="e#8115#8184#0" />
-            <element signature="e#8341#8371#1" />
-            <element signature="e#8686#8956#1" />
-            <element signature="e#8414#8482#0" />
-            <element signature="e#8565#8701#1" />
-            <element signature="e#8710#8777#0" />
-            <element signature="e#8849#9049#1" />
-            <element signature="e#8875#8949#1" />
-            <element signature="e#8965#9039#1" />
-            <element signature="e#9524#9677#1" />
-            <element signature="e#9691#9845#1" />
-            <element signature="method#contactManifold#2;class#Shape#0" />
-            <element signature="e#8081#8113#1" />
-            <element signature="e#8587#8628#1" />
-            <element signature="e#8944#8991#1" />
-            <element signature="docComment;method#overlap#0;class#Shape#0" />
-            <element signature="method#overlap#0;class#Shape#0" />
-            <element signature="e#9465#9535#0" />
-            <element signature="e#9632#9699#1" />
-            <element signature="e#9739#9806#1" />
-            <element signature="e#10073#11636#1" />
-            <element signature="e#10272#11630#1" />
-            <element signature="e#10525#10559#1" />
-            <element signature="e#10581#11622#1" />
-            <element signature="e#10664#10728#0" />
-            <element signature="e#10898#11251#1" />
-            <element signature="e#11105#11157#1" />
-            <element signature="e#11187#11239#1" />
-            <element signature="e#11263#11328#0" />
-            <element signature="e#11444#11612#1" />
-            <element signature="e#11681#11707#1" />
-            <element signature="e#11714#11779#0" />
-            <element signature="e#11873#11936#0" />
-            <element signature="e#12337#12384#1" />
-            <element signature="e#12425#12472#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Circle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ConvexPolygon/PolygonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="20" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/ContactEdge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        <state relative-caret-position="291">
+          <caret line="156" selection-start-line="156" selection-end-line="156" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/ContactManifold.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/ContactManifoldBasic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/MinTransVec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ConvexPolygon/Rectangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-          <folding>
-            <element signature="e#1491#1492#0" expanded="true" />
-            <element signature="e#1531#1532#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vectors/Vector2D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="82" column="8" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="8" />
-          <folding>
-            <element signature="docComment;class#Vector2D#0" />
-            <element signature="e#330#2153#0" />
-            <element signature="e#427#1139#0" />
-            <element signature="e#649#887#1" />
-            <element signature="e#727#810#1" />
-            <element signature="e#895#916#0" />
-            <element signature="e#988#1067#1" />
-            <element signature="e#1145#2147#0" />
-            <element signature="e#1405#1771#1" />
-            <element signature="e#1494#1570#1" />
-            <element signature="e#1663#1719#1" />
-            <element signature="e#1779#1800#0" />
-            <element signature="e#1885#1957#1" />
-            <element signature="e#2047#2100#1" />
-            <element signature="e#2503#2591#0" />
-            <element signature="e#2595#2670#0" />
-            <element signature="e#2676#2866#0" />
-            <element signature="e#3385#3534#0" />
-            <element signature="e#3540#3690#0" />
-            <element signature="e#3801#3965#0" />
-            <element signature="e#3801#4113#0" />
-            <element signature="e#4117#4293#0" />
-            <element signature="e#4300#4471#0" />
-            <element signature="e#4477#4684#0" />
-            <element signature="e#4688#4911#0" />
-            <element signature="e#5766#5885#0" />
-            <element signature="e#6019#6145#0" />
-            <element signature="e#6284#6403#0" />
-            <element signature="e#6409#6511#0" />
-            <element signature="e#6517#6624#0" />
-            <element signature="e#6628#6885#0" />
-            <element signature="e#6891#7127#0" />
-            <element signature="e#7133#7211#0" />
-            <element signature="e#7217#7295#0" />
-            <element signature="e#7301#7406#0" />
-            <element signature="e#7808#7926#0" />
-            <element signature="e#8029#8216#0" />
-            <element signature="e#8331#8474#0" />
-            <element signature="e#8478#8612#0" />
-            <element signature="e#8616#8982#0" />
-            <element signature="e#8986#9565#0" />
-            <element signature="e#9304#9427#1" />
-            <element signature="e#9328#9380#1" />
-            <element signature="e#9474#9522#1" />
-            <element signature="e#9569#10151#0" />
-            <element signature="e#9881#10007#1" />
-            <element signature="e#9906#9959#1" />
-            <element signature="e#10058#10107#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ConvexPolygon/CircleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsEngine/PhysicsEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="76" column="16" lean-forward="true" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PhysicsBodies/PhysicsBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -1374,7 +1001,7 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>10</last-edited>
+          <last-edited>12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
